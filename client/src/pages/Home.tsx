@@ -22,12 +22,14 @@ import {
   Zap,
   Award,
   Linkedin,
+  FileText,
+  ClipboardCheck,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 const highlights = [
   { value: "IFAM", label: "Formação técnica em Informática" },
-  { value: "3 áreas", label: "Atuação em RH, financeiro e administrativo" },
+  { value: "Mag Peças", label: "Assistente Administrativo" },
   { value: "2 projetos", label: "Soluções com foco em negócio e educação" },
 ];
 
@@ -60,8 +62,19 @@ const strengths = [
 
 const experiences = [
   {
+    title: "Assistente Administrativo | Mag Peças e Serviços",
+    period: "Experiência",
+    description:
+      "Atuação estratégica no suporte administrativo, com foco em processos fiscais e gestão documental, garantindo a fluidez das operações de entrada e saída.",
+    points: [
+      "Emissão e conferência de notas fiscais de entrada e saída",
+      "Gestão, arquivamento e organização rigorosa de documentos",
+      "Suporte operacional e administrativo para otimização de rotinas",
+    ],
+  },
+  {
     title: "Assistente Administrativa | Pioneira Equipamentos",
-    period: "Atuação atual",
+    period: "Trajetória",
     description:
       "Experiência multifuncional com participação em rotinas administrativas, financeiras e de recursos humanos, além de apoio a marketing e sistemas internos.",
     points: [
@@ -72,7 +85,7 @@ const experiences = [
   },
   {
     title: "Consultora de Vendas | Live Academia",
-    period: "Experiência anterior",
+    period: "Trajetória",
     description:
       "Atuação direta com atendimento, relacionamento com clientes, comunicação comercial e foco em resultados.",
     points: [
@@ -83,7 +96,7 @@ const experiences = [
   },
   {
     title: "Jovem Aprendiz – Auxiliar de Escritório | Live Academia",
-    period: "Base da trajetória",
+    period: "Trajetória",
     description:
       "Vivência formadora em organização de rotinas, suporte administrativo e construção de disciplina profissional.",
     points: [
@@ -112,7 +125,7 @@ const projects = [
 ];
 
 const skills = [
-  { category: "Administrativo", items: ["Organização", "Planejamento", "Comunicação", "Atendimento"] },
+  { category: "Administrativo", items: ["Emissão de NF", "Gestão Documental", "Organização", "Planejamento"] },
   { category: "Técnico", items: ["Lógica de programação", "Análise de sistemas", "Resolução de problemas", "Tecnologia"] },
   { category: "Soft Skills", items: ["Responsabilidade", "Adaptabilidade", "Trabalho em equipe", "Aprendizado contínuo"] },
 ];
@@ -149,7 +162,7 @@ const goals = [
 
 const achievements = [
   { icon: Award, title: "Técnica em Informática", subtitle: "IFAM - Instituto Federal do Amazonas" },
-  { icon: Zap, title: "Experiência Multifuncional", subtitle: "3+ anos em diferentes áreas" },
+  { icon: FileText, title: "Gestão Administrativa", subtitle: "Foco em processos fiscais e organização" },
   { icon: Trophy, title: "Projetos Implementados", subtitle: "2 soluções com impacto real" },
 ];
 
@@ -216,7 +229,7 @@ export default function Home() {
                 Mariana Cardoso
               </h1>
               <p className="max-w-2xl text-base leading-8 text-muted-foreground md:text-lg">
-                Técnica em Informática pelo IFAM, com experiência em diferentes áreas. Sou alguém que gosta de aprender, se adaptar e fazer as coisas com dedicação. Aqui você vai conhecer um pouco de quem sou, o que já fiz e para onde quero ir.
+                Técnica em Informática pelo IFAM e Assistente Administrativo. Sou alguém que gosta de aprender, se adaptar e fazer as coisas com dedicação. Aqui você vai conhecer um pouco de quem sou, o que já fiz e para onde quero ir.
               </p>
             </div>
 
@@ -258,112 +271,90 @@ export default function Home() {
       </section>
 
       <section id="sobre" className="py-24 md:py-32">
-        <div className="container grid gap-10 md:grid-cols-[1.1fr_0.9fr]">
-          <div className="space-y-8">
-            <div>
-              <p className="section-kicker">Sobre mim</p>
-              <h2 className="section-title">Uma trajetória construída com consciência, disciplina e identidade.</h2>
-            </div>
-
-            <div className="panel space-y-6">
-              <div className="flex items-start gap-4">
-                <div className="mt-1 rounded-2xl bg-accent/10 p-3 text-accent">
-                  <Quote className="h-5 w-5" />
-                </div>
-                <div>
-                  <p className="text-lg font-semibold text-foreground">Provérbios 27:7</p>
-                  <p className="mt-2 text-muted-foreground">
-                    "A alma farta pisa o favo de mel, mas à alma faminta todo amargo é doce."
-                  </p>
-                </div>
+        <div className="container space-y-24">
+          <div className="grid gap-16 md:grid-cols-[0.8fr_1.2fr] md:items-center">
+            <div className="panel space-y-8 hover-lift">
+              <div className="inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-accent/10 text-accent">
+                <Quote className="h-6 w-6" />
               </div>
-              <p className="text-base leading-8 text-muted-foreground">
-                Esse versículo traduz muito da forma como enxergo a vida: decisões precisam ser tomadas com lucidez, não apenas por carência, impulso ou urgência. Levo esse princípio comigo no dia a dia, porque acredito que maturidade se constrói quando aprendemos a reconhecer valor, limites e propósito.
+              <div className="space-y-4">
+                <p className="text-sm font-bold uppercase tracking-[0.24em] text-accent">Provérbios 27:7</p>
+                <p className="text-xl font-medium italic leading-relaxed text-foreground">
+                  "A alma farta pisa o favo de mel, mas à alma faminta todo amargo é doce."
+                </p>
+              </div>
+              <p className="leading-8 text-muted-foreground">
+                Esse versículo traduz muito da forma como enxergo a vida: decisões precisam ser tomadas com lucidez, não apenas por carência, impulso ou urgência. Levo esse princípio comigo no campo pessoal e também no profissional, porque acredito que maturidade se constrói quando aprendemos a reconhecer valor, limites e propósito.
               </p>
             </div>
 
-            <div className="grid gap-5 sm:grid-cols-2">
-              {strengths.map((item) => {
-                const Icon = item.icon;
-                return (
-                  <div key={item.title} className="panel hover-lift">
-                    <div className="mb-4 inline-flex rounded-2xl bg-accent/10 p-3 text-accent">
-                      <Icon className="h-5 w-5" />
+            <div className="space-y-12">
+              <div className="space-y-4">
+                <h2 className="text-4xl font-black md:text-5xl">Minha essência</h2>
+                <p className="text-lg text-muted-foreground">O que me move e como eu trabalho.</p>
+              </div>
+              <div className="grid gap-6 sm:grid-cols-2">
+                {strengths.map((item) => {
+                  const Icon = item.icon;
+                  return (
+                    <div key={item.title} className="panel space-y-4 hover-lift">
+                      <div className="inline-flex h-10 w-10 items-center justify-center rounded-xl bg-accent/10 text-accent">
+                        <Icon className="h-5 w-5" />
+                      </div>
+                      <h3 className="text-lg font-bold">{item.title}</h3>
+                      <p className="text-sm leading-relaxed text-muted-foreground">{item.description}</p>
                     </div>
-                    <h3 className="text-xl font-bold">{item.title}</h3>
-                    <p className="mt-3 text-sm leading-7 text-muted-foreground">{item.description}</p>
-                  </div>
-                );
-              })}
+                  );
+                })}
+              </div>
             </div>
           </div>
 
-          <div className="space-y-6">
-            <div className="panel hover-lift overflow-hidden p-0">
-              <img src="/images/coffee.jpeg" alt="Registro de um momento de Mariana" className="h-72 w-full object-cover" />
-              <div className="p-7">
-                <p className="text-xs font-bold uppercase tracking-[0.24em] text-accent">Visão de mundo</p>
-                <p className="mt-3 leading-8 text-muted-foreground">
-                  Minha família sempre foi importante na minha formação. Cresci vendo esforço, trabalho e empreendedorismo. Isso me ajudou a desenvolver responsabilidade, entender negócios e ter vontade de crescer com consistência.
-                </p>
+          <div className="panel grid gap-12 md:grid-cols-[1.2fr_0.8fr] md:items-center hover-lift">
+            <div className="space-y-6">
+              <div className="inline-flex items-center gap-2 rounded-full bg-accent/10 px-4 py-1.5 text-xs font-bold uppercase tracking-wider text-accent">
+                <GraduationCap className="h-4 w-4" /> Formação
               </div>
-            </div>
-
-            <div className="panel space-y-5 hover-lift">
-              <div className="flex items-center gap-3 text-accent">
-                <GraduationCap className="h-5 w-5" />
-                <p className="text-sm font-bold uppercase tracking-[0.24em]">Formação</p>
-              </div>
-              <div>
-                <h3 className="text-2xl font-bold">Técnica em Informática</h3>
-                <p className="text-muted-foreground">Instituto Federal do Amazonas (IFAM)</p>
-              </div>
+              <h3 className="text-3xl font-black">Técnica em Informática</h3>
+              <p className="text-sm font-bold text-muted-foreground">Instituto Federal do Amazonas (IFAM)</p>
               <p className="leading-8 text-muted-foreground">
-                A formação em Informática me ajudou a pensar de forma lógica, a entender tecnologia e a desenvolver soluções com mais estrutura e clareza.
+                Minha formação fortaleceu meu raciocínio lógico, meu contato com tecnologia e minha capacidade de desenvolver soluções com mais estrutura, clareza e visão de processo.
               </p>
+            </div>
+            <div className="relative aspect-square overflow-hidden rounded-3xl bg-secondary/40">
+              <img src="/images/formacao.jpeg" alt="Mariana IFAM" className="h-full w-full object-cover" />
             </div>
           </div>
         </div>
       </section>
 
-      <section id="experiencia" className="bg-secondary/35 py-24 md:py-32">
-        <div className="container space-y-12">
-          <div className="max-w-3xl">
-            <p className="section-kicker">Experiência profissional</p>
-            <h2 className="section-title">Experiência prática, postura multifuncional e visão de negócio.</h2>
-            <p className="mt-5 text-lg leading-8 text-muted-foreground">
-              Passei por diferentes funções e áreas, e cada uma me ensinou algo importante. Aprendi sobre operação, atendimento, organização interna e como as coisas funcionam de verdade. Cada experiência me moldou um pouco mais.
-            </p>
+      <section id="experiencia" className="bg-card py-24 md:py-32">
+        <div className="container space-y-16">
+          <div className="space-y-4 text-center">
+            <h2 className="text-4xl font-black md:text-5xl">Experiência</h2>
+            <p className="mx-auto max-w-2xl text-muted-foreground">Minha trajetória profissional e os aprendizados em cada etapa.</p>
           </div>
 
-          <div className="grid gap-6">
-            {experiences.map((item, index) => (
-              <div key={item.title} className="panel grid gap-6 md:grid-cols-[220px_1fr] md:items-start hover-lift">
-                <div>
-                  <div className="inline-flex rounded-full border border-accent/20 bg-accent/10 px-4 py-2 text-xs font-bold uppercase tracking-[0.22em] text-accent">
-                    {item.period}
-                  </div>
-                  <div className="mt-4 hidden md:block">
-                    <div className="text-3xl font-black text-accent/20">{String(index + 1).padStart(2, '0')}</div>
-                  </div>
+          <div className="grid gap-8 md:grid-cols-2">
+            {experiences.map((exp, index) => (
+              <div key={exp.title} className="panel group relative flex flex-col justify-between overflow-hidden hover-lift">
+                <div className="absolute -right-4 -top-4 text-8xl font-black text-accent/5 transition-colors group-hover:text-accent/10">
+                  0{index + 1}
                 </div>
-                <div>
-                  <div className="flex items-start gap-3">
-                    <div className="mt-1 rounded-2xl bg-accent/10 p-3 text-accent">
-                      <BriefcaseBusiness className="h-5 w-5" />
-                    </div>
-                    <div>
-                      <h3 className="text-2xl font-bold">{item.title}</h3>
-                      <p className="mt-3 leading-8 text-muted-foreground">{item.description}</p>
-                    </div>
+                <div className="space-y-6">
+                  <div className="space-y-2">
+                    <span className="text-xs font-bold uppercase tracking-[0.24em] text-accent">{exp.period}</span>
+                    <h3 className="text-2xl font-black leading-tight">{exp.title}</h3>
                   </div>
-                  <div className="mt-5 grid gap-3 md:grid-cols-3">
-                    {item.points.map((point) => (
-                      <div key={point} className="rounded-2xl border border-border bg-background px-4 py-4 text-sm text-muted-foreground hover-lift">
+                  <p className="text-sm leading-relaxed text-muted-foreground">{exp.description}</p>
+                  <ul className="space-y-3">
+                    {exp.points.map((point) => (
+                      <li key={point} className="flex items-start gap-3 text-sm text-muted-foreground">
+                        <BadgeCheck className="mt-0.5 h-4 w-4 shrink-0 text-accent" />
                         {point}
-                      </div>
+                      </li>
                     ))}
-                  </div>
+                  </ul>
                 </div>
               </div>
             ))}
@@ -372,69 +363,72 @@ export default function Home() {
       </section>
 
       <section id="projetos" className="py-24 md:py-32">
-        <div className="container space-y-12">
-          <div className="max-w-3xl">
-            <p className="section-kicker">Projetos</p>
-            <h2 className="section-title">Projetos que conectam tecnologia, organização e utilidade real.</h2>
-            <p className="mt-5 text-lg leading-8 text-muted-foreground">
-              Gosto de pensar na experiência, na clareza das informações e na forma como a tecnologia pode facilitar processos. Projetos que fazem sentido, que resolvem algo real.
-            </p>
+        <div className="container space-y-16">
+          <div className="space-y-4">
+            <h2 className="text-4xl font-black md:text-5xl">Projetos</h2>
+            <p className="max-w-2xl text-muted-foreground">Gosto de pensar na experiência, na clareza das informações e na forma como a tecnologia pode facilitar processos.</p>
           </div>
 
-          <div className="grid gap-6 md:grid-cols-2">
+          <div className="grid gap-8 md:grid-cols-2">
             {projects.map((project) => (
-              <div key={project.title} className="panel flex h-full flex-col justify-between hover-lift">
-                <div>
-                  <p className="text-xs font-bold uppercase tracking-[0.24em] text-accent">{project.category}</p>
-                  <h3 className="mt-3 text-3xl font-black">{project.title}</h3>
-                  <p className="mt-4 leading-8 text-muted-foreground">{project.description}</p>
+              <div key={project.title} className="panel flex flex-col justify-between space-y-8 hover-lift">
+                <div className="space-y-6">
+                  <div className="space-y-2">
+                    <span className="text-xs font-bold uppercase tracking-[0.24em] text-accent">{project.category}</span>
+                    <h3 className="text-3xl font-black">{project.title}</h3>
+                  </div>
+                  <p className="leading-relaxed text-muted-foreground">{project.description}</p>
+                  <div className="flex flex-wrap gap-2">
+                    {project.tags.map((tag) => (
+                      <span key={tag} className="rounded-full bg-secondary px-4 py-1 text-xs font-medium text-secondary-foreground">
+                        {tag}
+                      </span>
+                    ))}
+                  </div>
                 </div>
-                <div className="mt-6 flex flex-wrap gap-2">
-                  {project.tags.map((tag) => (
-                    <span key={tag} className="rounded-full border border-accent/15 bg-accent/10 px-4 py-2 text-xs font-bold text-accent">
-                      {tag}
-                    </span>
-                  ))}
-                </div>
+                <Button variant="outline" className="w-fit border-accent text-accent hover:bg-accent/5">
+                  Ver detalhes <ArrowRight className="ml-2 h-4 w-4" />
+                </Button>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      <section id="habilidades" className="bg-secondary/35 py-24 md:py-32">
-        <div className="container space-y-12">
-          <div className="max-w-3xl">
-            <p className="section-kicker">Habilidades & Competências</p>
-            <h2 className="section-title">Conjunto de habilidades que me definem profissionalmente.</h2>
+      <section id="habilidades" className="bg-card py-24 md:py-32">
+        <div className="container space-y-16">
+          <div className="space-y-4 text-center">
+            <h2 className="text-4xl font-black md:text-5xl">Habilidades</h2>
+            <p className="mx-auto max-w-2xl text-muted-foreground">Competências técnicas e comportamentais que utilizo no dia a dia.</p>
           </div>
 
-          <div className="grid gap-6 md:grid-cols-3">
-            {skills.map((skillGroup) => (
-              <div key={skillGroup.category} className="panel space-y-5 hover-lift">
-                <h3 className="text-xl font-bold text-accent">{skillGroup.category}</h3>
-                <div className="space-y-3">
-                  {skillGroup.items.map((skill) => (
-                    <div key={skill} className="flex items-center gap-3">
-                      <div className="h-2 w-2 rounded-full bg-accent" />
-                      <span className="text-sm text-muted-foreground">{skill}</span>
-                    </div>
+          <div className="grid gap-8 md:grid-cols-3">
+            {skills.map((skill) => (
+              <div key={skill.category} className="panel space-y-6 hover-lift">
+                <h3 className="text-xl font-black">{skill.category}</h3>
+                <div className="flex flex-wrap gap-2">
+                  {skill.items.map((item) => (
+                    <span key={item} className="rounded-xl bg-accent/5 px-4 py-2 text-sm font-semibold text-accent">
+                      {item}
+                    </span>
                   ))}
                 </div>
               </div>
             ))}
           </div>
 
-          <div className="grid gap-6 md:grid-cols-3 mt-8">
-            {achievements.map((achievement) => {
-              const Icon = achievement.icon;
+          <div className="grid gap-8 md:grid-cols-3">
+            {achievements.map((item) => {
+              const Icon = item.icon;
               return (
-                <div key={achievement.title} className="panel text-center hover-lift">
-                  <div className="inline-flex rounded-2xl bg-accent/10 p-4 text-accent mb-4">
-                    <Icon className="h-6 w-6" />
+                <div key={item.title} className="panel flex items-center gap-5 hover-lift">
+                  <div className="inline-flex h-14 w-14 items-center justify-center rounded-2xl bg-accent/10 text-accent">
+                    <Icon className="h-7 w-7" />
                   </div>
-                  <h3 className="text-lg font-bold">{achievement.title}</h3>
-                  <p className="mt-2 text-sm text-muted-foreground">{achievement.subtitle}</p>
+                  <div>
+                    <p className="font-black">{item.title}</p>
+                    <p className="text-sm text-muted-foreground">{item.subtitle}</p>
+                  </div>
                 </div>
               );
             })}
@@ -442,65 +436,45 @@ export default function Home() {
         </div>
       </section>
 
-      <section id="galeria" className="py-24 md:py-32">
-        <div className="container space-y-12">
-          <div className="max-w-3xl">
-            <p className="section-kicker">Galeria</p>
-            <h2 className="section-title">Momentos que definem minha jornada.</h2>
-          </div>
-
-          <div className="grid gap-4 md:grid-cols-3 lg:grid-cols-4">
-            <div className="md:col-span-2 lg:col-span-2 overflow-hidden rounded-[1.8rem] border border-border bg-card p-3 shadow-sm hover-lift">
-              <img src="/images/group.jpeg" alt="Mariana em grupo" className="h-64 w-full rounded-[1.2rem] object-cover" />
+      <section id="essencia" className="py-24 md:py-32">
+        <div className="container space-y-24">
+          <div className="space-y-16">
+            <div className="space-y-4">
+              <h2 className="text-4xl font-black md:text-5xl">Essência</h2>
+              <p className="max-w-2xl text-muted-foreground">Um pouco mais sobre meus interesses e o que busco para o futuro.</p>
             </div>
-            <div className="overflow-hidden rounded-[1.8rem] border border-border bg-card p-3 shadow-sm hover-lift">
-              <img src="/images/chess.jpeg" alt="Xadrez" className="h-64 w-full rounded-[1.2rem] object-cover" />
-            </div>
-            <div className="overflow-hidden rounded-[1.8rem] border border-border bg-card p-3 shadow-sm hover-lift">
-              <img src="/images/lifestyle.jpeg" alt="Registro pessoal de Mariana" className="h-64 w-full rounded-[1.2rem] object-cover" />
-            </div>
-          </div>
-        </div>
-      </section>
 
-      <section id="essencia" className="bg-secondary/35 py-24 md:py-32">
-        <div className="container space-y-12">
-          <div className="max-w-3xl">
-            <p className="section-kicker">Essência e interesses</p>
-            <h2 className="section-title">Um portfólio pessoal também precisa mostrar o que me forma por dentro.</h2>
-            <p className="mt-5 text-lg leading-8 text-muted-foreground">
-              Além da minha formação e experiência, existem hábitos, referências e objetivos que moldam a minha maneira de pensar, agir e construir futuro.
-            </p>
-          </div>
-
-          <div className="grid gap-6 lg:grid-cols-[1.1fr_0.9fr]">
-            <div className="grid gap-6 sm:grid-cols-2">
-              {interests.map((item) => {
-                const Icon = item.icon;
-                return (
-                  <div key={item.title} className="panel hover-lift">
-                    <div className="mb-4 inline-flex rounded-2xl bg-accent/10 p-3 text-accent">
-                      <Icon className="h-5 w-5" />
+            <div className="grid gap-8 md:grid-cols-2">
+              <div className="grid gap-6">
+                {interests.map((item) => {
+                  const Icon = item.icon;
+                  return (
+                    <div key={item.title} className="panel flex gap-6 hover-lift">
+                      <div className="inline-flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl bg-accent/10 text-accent">
+                        <Icon className="h-6 w-6" />
+                      </div>
+                      <div className="space-y-2">
+                        <h3 className="text-lg font-bold">{item.title}</h3>
+                        <p className="text-sm leading-relaxed text-muted-foreground">{item.text}</p>
+                      </div>
                     </div>
-                    <h3 className="text-xl font-bold">{item.title}</h3>
-                    <p className="mt-3 text-sm leading-7 text-muted-foreground">{item.text}</p>
-                  </div>
-                );
-              })}
-            </div>
-
-            <div className="panel space-y-5 hover-lift">
-              <div className="flex items-center gap-3 text-accent">
-                <Target className="h-5 w-5" />
-                <p className="text-sm font-bold uppercase tracking-[0.24em]">Metas atuais</p>
+                  );
+                })}
               </div>
-              <div className="space-y-3">
-                {goals.map((goal) => (
-                  <div key={goal} className="flex items-start gap-3 rounded-2xl border border-border bg-background px-4 py-4">
-                    <span className="mt-1 h-2.5 w-2.5 flex-shrink-0 rounded-full bg-accent" />
-                    <p className="text-sm leading-7 text-muted-foreground">{goal}</p>
-                  </div>
-                ))}
+
+              <div className="panel space-y-8 hover-lift">
+                <div className="space-y-4">
+                  <h3 className="text-2xl font-black">Metas e objetivos</h3>
+                  <p className="text-muted-foreground">O que estou construindo agora.</p>
+                </div>
+                <div className="space-y-4">
+                  {goals.map((goal) => (
+                    <div key={goal} className="flex items-center gap-4 rounded-2xl border border-border bg-background p-4 transition hover:border-accent/40">
+                      <div className="h-2 w-2 rounded-full bg-accent" />
+                      <p className="text-sm font-medium">{goal}</p>
+                    </div>
+                  ))}
+                </div>
               </div>
             </div>
           </div>
