@@ -61,36 +61,38 @@ const strengths = [
 const experiences = [
   {
     title: "Assistente Administrativa Fiscal e Operacional | MAG Peças e Serviços",
-    period: "",
+    period: "Experiência de Trajetória",
     description:
       "Atuação na área administrativa com foco em rotinas fiscais e organização documental, garantindo conformidade e eficiência nos processos internos.",
     points: [
-      "Emissão de notas fiscais de entrada e saída com controle e conferência de dados",
+      "Emissão de notas fiscais de entrada e saída com conferência de dados",
       "Organização e arquivamento de documentos físicos e digitais",
       "Padronização e controle de informações administrativas",
       "Apoio às rotinas administrativas e operacionais da empresa",
     ],
   },
   {
-    title: "Consultora de Vendas | Live Academia",
-    period: "Experiência anterior",
+    title: "Assistente Administrativa | Pioneira Andaimes e Equipamentos",
+    period: "Experiência de Trajetória",
     description:
-      "Atuação direta com atendimento, relacionamento com clientes, comunicação comercial e foco em resultados.",
+      "Atuação nos setores administrativo, financeiro e de recursos humanos, contribuindo para a organização interna e suporte às operações da empresa.",
     points: [
-      "Abordagem consultiva e comunicação clara",
-      "Acompanhamento de metas e apoio ao comercial",
-      "Fortalecimento de relacionamento com o público",
+      "Atendimento ao cliente e controle de locação de equipamentos",
+      "Elaboração de contratos e participação em processos de licitação",
+      "Organização de documentos administrativos e financeiros",
+      "Elaboração de relatórios e suporte às rotinas operacionais",
     ],
   },
   {
-    title: "Jovem Aprendiz – Auxiliar de Escritório | Live Academia",
-    period: "Base da trajetória",
+    title: "Consultora de Vendas | Live Academia",
+    period: "Experiência de Trajetória",
     description:
-      "Vivência formadora em organização de rotinas, suporte administrativo e construção de disciplina profissional.",
+      "Atuação com foco em atendimento ao cliente, relacionamento e conversão de vendas.",
     points: [
-      "Aprendizado prático sobre rotina corporativa",
-      "Desenvolvimento de postura profissional",
-      "Evolução em organização, comunicação e responsabilidade",
+      "Atendimento direto ao cliente e suporte comercial",
+      "Apresentação de serviços e negociação de planos",
+      "Organização de informações e acompanhamento de clientes",
+      "Apoio às estratégias de vendas",
     ],
   },
 ];
