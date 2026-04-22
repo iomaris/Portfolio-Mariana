@@ -29,7 +29,7 @@ import { Button } from "@/components/ui/button";
 
 const highlights = [
   { value: "IFAM", label: "Formação técnica em Informática" },
-  { value: "Mag Peças", label: "Assistente Administrativo" },
+  { value: "Mag Peças", label: "Assistente Administrativo Fiscal" },
   { value: "2 projetos", label: "Soluções com foco em negócio e educação" },
 ];
 
@@ -62,14 +62,14 @@ const strengths = [
 
 const experiences = [
   {
-    title: "Assistente Administrativo | Mag Peças e Serviços",
+    title: "Assistente Administrativo Fiscal e Documental | Mag Peças e Serviços",
     period: "Experiência",
     description:
-      "Atuação estratégica no suporte administrativo, com foco em processos fiscais e gestão documental, garantindo a fluidez das operações de entrada e saída.",
+      "Atuação no suporte administrativo com ênfase em rotinas fiscais e controle documental, contribuindo para a organização dos processos internos e a fluidez das operações da empresa.",
     points: [
-      "Emissão e conferência de notas fiscais de entrada e saída",
-      "Gestão, arquivamento e organização rigorosa de documentos",
-      "Suporte operacional e administrativo para otimização de rotinas",
+      "Emissão de notas fiscais de entrada e saída, com atenção à conferência de dados e conformidade dos processos",
+      "Arquivamento, organização e controle de documentos administrativos e fiscais",
+      "Apoio às rotinas internas com foco em organização, padronização e eficiência operacional",
     ],
   },
   {
