@@ -1,0 +1,157 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --font-sans: "Space Grotesk Variable", Helvetica, Arial, sans-serif;
+  --font-serif: "Instrument Serif", Georgia, serif;
+  --font-script: "Dancing Script", cursive;
+  --font-mono: "Space Mono", ui-monospace, monospace;
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-rose: var(--rose);
+  --color-mauve: var(--mauve);
+  --color-cocoa: var(--cocoa);
+  --color-blush: var(--blush);
+  --color-ink: var(--foreground);
+}
+
+/* Paleta creme, cacau e blush (referência: abiemaxey.com). Fundo branco; a personagem tem fundo transparente. */
+:root {
+  --radius: 1rem;
+  --background: #ffffff;
+  --foreground: #34302e;
+  --card: #fbf8f7;
+  --card-foreground: #34302e;
+  --popover: #fffaf8;
+  --popover-foreground: #34302e;
+  --primary: #3a3533;
+  --primary-foreground: #fffaf8;
+  --secondary: #efe2de;
+  --secondary-foreground: #34302e;
+  --muted: #efe2de;
+  --muted-foreground: #7d716c;
+  --accent: #dc9a90;
+  --accent-foreground: #ffffff;
+  --destructive: #b4413c;
+  --destructive-foreground: #ffffff;
+  --border: #e8d8d3;
+  --input: #fffaf8;
+  --ring: #dc9a90;
+  --rose: #dc9a90;
+  --mauve: #a8746c;
+  --cocoa: #6b4a3c;
+  --blush: #fbe3de;
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+  }
+  ::selection {
+    background: var(--rose);
+    color: #fff;
+  }
+  a[href],
+  button:not(:disabled) {
+    @apply cursor-pointer;
+  }
+}
+
+@layer components {
+  .container {
+    width: 100%;
+    max-width: 1280px;
+    margin-inline: auto;
+    padding-inline: 1.25rem;
+  }
+  @media (min-width: 640px) {
+    .container {
+      padding-inline: 2.5rem;
+    }
+  }
+
+  .eyebrow {
+    @apply font-mono text-[10px] uppercase tracking-[0.2em] text-muted-foreground;
+  }
+
+  .btn-dark {
+    @apply inline-flex items-center gap-3 rounded-full bg-primary py-2 pl-6 pr-2 text-sm font-bold uppercase tracking-[0.08em] text-primary-foreground transition hover:bg-cocoa;
+  }
+  .btn-ghost {
+    @apply inline-flex items-center gap-2 font-mono text-[11px] uppercase tracking-[0.14em] text-muted-foreground transition hover:text-foreground;
+  }
+
+  .anim-fade-up {
+    animation: fade-up 0.9s cubic-bezier(0.22, 1, 0.36, 1) both;
+  }
+  .anim-rise-in {
+    animation: rise-in 1.4s cubic-bezier(0.22, 1, 0.36, 1) 0.3s both;
+  }
+  @keyframes fade-up {
+    from {
+      opacity: 0;
+      transform: translateY(28px);
+    }
+  }
+  @keyframes rise-in {
+    from {
+      opacity: 0;
+      transform: translateY(4vh) scale(1.03);
+    }
+  }
+
+  /* entrada suave ao rolar (classe adicionada via IntersectionObserver) */
+  .reveal {
+    opacity: 0;
+    transform: translateY(32px);
+    transition:
+      opacity 0.9s cubic-bezier(0.22, 1, 0.36, 1),
+      transform 0.9s cubic-bezier(0.22, 1, 0.36, 1);
+  }
+  .reveal.is-visible {
+    opacity: 1;
+    transform: none;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .anim-fade-up,
+    .anim-rise-in {
+      animation-duration: 0.01ms !important;
+      animation-delay: 0ms !important;
+    }
+    .reveal {
+      opacity: 1;
+      transform: none;
+      transition: none;
+    }
+  }
+}
