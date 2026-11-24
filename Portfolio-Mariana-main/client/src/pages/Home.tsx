@@ -24,6 +24,7 @@ const nav = [
   ["cases", "Social"],
   ["criacoes", "Criações"],
   ["projetos", "Sites"],
+  ["administracao", "Administração"],
   ["experiencia", "Experiência"],
   ["contato", "Contato"],
 ];
@@ -122,6 +123,24 @@ const experiences = [
       "Série de divulgação das disciplinas do PPGCASA",
       "Identidade, adesivo e crachá do Intergreve 2024",
     ],
+  },
+];
+
+const adminAreas = [
+  {
+    title: "Fiscal e financeiro",
+    company: "MAG Peças e Serviços",
+    items: ["Emissão e conferência de notas fiscais de entrada e saída", "Contas a pagar e a receber", "Fluxo de caixa organizado"],
+  },
+  {
+    title: "Contratos e locação",
+    company: "Pioneira Andaimes & Equipamentos",
+    items: ["Elaboração de contratos", "Acompanhamento de licitações", "Controle de locação de equipamentos"],
+  },
+  {
+    title: "Escritório e sistemas",
+    company: "Live Academia",
+    items: ["Arquivo padronizado: ~30 min a menos de busca por dia", "Registro de informações em sistemas internos", "Suporte à equipe no uso dos sistemas"],
   },
 ];
 
@@ -546,7 +565,7 @@ export default function Home() {
               aria-current={active === id ? "true" : undefined}
               className={`relative z-10 rounded-full px-3 py-2 text-[12px] font-semibold transition-colors duration-300 sm:px-4 sm:text-[13px] ${
  active === id ? "text-background" : "text-foreground/60 hover:text-foreground"
- } ${id === "experiencia" ? "hidden sm:block" : ""}`}
+ } ${id === "experiencia" || id === "administracao" ? "hidden sm:block" : ""}`}
             >
               {label}
             </a>
@@ -567,7 +586,7 @@ export default function Home() {
 
         <div className="container relative z-20 pt-28 lg:grid lg:min-h-[100dvh] lg:grid-cols-[1fr_auto] lg:items-center lg:pt-0">
           <div className="max-w-md">
-            <p className="eyebrow anim-fade-up" style={delay(700)}>
+            <p className="eyebrow anim-fade-up whitespace-nowrap !text-[9px] !tracking-[0.1em] sm:!text-[11px] sm:!tracking-[0.18em]" style={delay(700)}>
               Social media · Desenvolvedora full stack · Administração
             </p>
             <h1 className="mt-5 text-[52px] font-extrabold leading-[0.95] tracking-[-0.045em] md:text-[84px]">
@@ -722,15 +741,39 @@ export default function Home() {
         </div>
       </section>
 
+      {/* ADMINISTRAÇÃO */}
+      <section id="administracao" className="py-24 md:py-32">
+        <div className="container grid gap-12 lg:grid-cols-[1fr] xl:grid-cols-[400px_1fr] xl:gap-16">
+          <SectionHead n="" title="Administração" />
+          <div className="grid gap-12 md:grid-cols-3 md:gap-10">
+            {adminAreas.map((a, i) => (
+              <div key={a.title} className="reveal" style={vars({ "--d": `${i * 100}ms` })}>
+                <span className="font-mono text-xs text-muted-foreground">{String(i + 1).padStart(2, "0")}</span>
+                <h3 className="mt-4 text-2xl font-extrabold tracking-[-0.02em]">{a.title}</h3>
+                <p className="mt-1 text-sm text-muted-foreground">{a.company}</p>
+                <ul className="mt-6 space-y-3 text-[15px] leading-relaxed text-foreground/80">
+                  {a.items.map((it) => (
+                    <li key={it} className="flex gap-3">
+                      <span className="mt-[0.7em] h-px w-3 shrink-0 bg-foreground/40" />
+                      {it}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* FERRAMENTAS */}
-      <section id="ferramentas" className="py-24 md:py-32">
+      <section id="ferramentas" className="bg-card py-24 md:py-32">
         <div className="container grid gap-12 lg:grid-cols-[300px_1fr] lg:gap-24">
           <SectionHead n="" title="Ferramentas" />
           <ul className="grid grid-cols-3 gap-2.5 sm:gap-3 md:grid-cols-4 xl:grid-cols-6">
             {tools.map((t, i) => (
               <li
                 key={t.name}
-                className="reveal group flex aspect-square flex-col items-center justify-center gap-2.5 rounded-2xl sm:gap-4 sm:rounded-3xl bg-card text-foreground transition-[transform,background-color,color] duration-500 hover:-translate-y-1.5 hover:bg-foreground hover:text-background"
+                className="reveal group flex aspect-square flex-col items-center justify-center gap-2.5 rounded-2xl sm:gap-4 sm:rounded-3xl bg-background text-foreground transition-[transform,background-color,color] duration-500 hover:-translate-y-1.5 hover:bg-foreground hover:text-background"
                 style={vars({ "--d": `${(i % 6) * 60}ms` })}
               >
                 {t.path ? (
@@ -748,7 +791,7 @@ export default function Home() {
       </section>
 
       {/* EXPERIÊNCIA */}
-      <section id="experiencia" className="bg-card py-24 md:py-32">
+      <section id="experiencia" className="py-24 md:py-32">
         <div className="container grid gap-12 lg:grid-cols-[300px_1fr] lg:gap-24">
           <SectionHead n="07 / Experiência" title="Onde eu já estive" />
           <div ref={expRef} className="relative pl-8">
@@ -780,7 +823,7 @@ export default function Home() {
       </section>
 
       {/* FORMAÇÃO */}
-      <section className="py-24 md:py-32">
+      <section className="bg-card py-24 md:py-32">
         <div className="container grid gap-12 lg:grid-cols-[300px_1fr] lg:gap-24">
           <SectionHead n="08 / Formação" title="Formação" />
           <ul>

@@ -62,3 +62,6 @@
 .sm .deliver .tile:has(.changes){align-self:center}
 .sm .deliver .ba{height:auto;width:min(100%,calc(min(720px,82vh) * 910 / 1287))}
 .sm .deliver .tile:has(.ba){display:flex;justify-content:center}
+
+/* catálogo e lista lado a lado, sem vão */
+@media (min-width:900px){.sm .deliver .tile:has(.ba){grid-column:span 5;justify-content:flex-start}.sm .deliver .tile:has(.changes){grid-column:span 7}}
