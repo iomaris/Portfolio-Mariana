@@ -29,7 +29,7 @@ const HTML = String.raw`
       <div class="case-top">
         <div class="rv">
           <h3>MAG Peças e Serviços</h3>
-          <p class="sum">Loja de peças para motores Cummins que vendia bem no balcão, mas quase não aparecia no Instagram. Assumi o perfil inteiro: <strong>o que postar, como postar e quem responde quem chama.</strong></p>
+          <p class="sum">Loja de peças para motores Cummins. Assumi o Instagram inteiro: <strong>o que postar, como postar e quem responde.</strong></p>
           <dl class="facts">
             <div><dt>Segmento</dt><dd>Peças diesel · B2B</dd></div>
             <div><dt>Meu papel</dt><dd>Social media</dd></div>
@@ -44,22 +44,22 @@ const HTML = String.raw`
           <div class="story-block">
             <div>
               <h4>O desafio</h4>
-              <p>Quem procura peça de motor sabe o que quer e só precisa saber se tem e quanto custa. O perfil precisava mostrar o estoque com cara de marca séria e virar conversa.</p>
+              <p>Mostrar o estoque com cara de marca séria e transformar post em conversa.</p>
             </div>
             <div>
               <h4>O que eu fiz</h4>
               <ul>
-                <li><span><b>Linha visual própria</b> no azul da marca, para cada peça parecer parte de uma coleção.</span></li>
-                <li><span><b>Série de produtos:</b> um post por peça, com contato sempre no mesmo lugar.</span></li>
-                <li><span><b>Datas e avisos</b> de feriado e horário com o mesmo cuidado visual.</span></li>
-                <li><span><b>Atendimento</b> no direct e WhatsApp, do primeiro contato ao orçamento.</span></li>
-                <li><span><b>Catálogo impresso</b> de peças Cummins redesenhado.</span></li>
-                <li><span><b>Site</b> atualizado com os mesmos serviços e contatos do perfil.</span></li>
+                <li><span><b>Linha visual</b> no azul da marca</span></li>
+                <li><span><b>Um post por peça,</b> contato sempre no mesmo lugar</span></li>
+                <li><span><b>Avisos</b> de feriado e horário</span></li>
+                <li><span><b>Atendimento</b> no direct e WhatsApp</span></li>
+                <li><span><b>Catálogo</b> Cummins redesenhado</span></li>
+                <li><span><b>Site</b> atualizado</span></li>
               </ul>
             </div>
             <div>
-              <h4>O que mudou</h4>
-              <p>O perfil ganhou uma identidade reconhecível no feed, e os clientes passaram a pedir orçamento pelo direct citando o post da peça.</p>
+              <h4>O resultado</h4>
+              <p>Feed com identidade própria e clientes pedindo orçamento pelo direct citando o post da peça.</p>
             </div>
           </div>
         </div>
@@ -83,7 +83,7 @@ const HTML = String.raw`
         <div class="chat-open span-12 rv">
           <div class="chat-text">
             <h5>Quem chama, recebe resposta.</h5>
-            <p>Meu fluxo: responder rápido, confirmar a referência da peça com o balcão antes de prometer, e levar a negociação para o WhatsApp da loja com tudo anotado.</p>
+            <p>Responder rápido, confirmar a peça com o balcão e fechar o orçamento no WhatsApp.</p>
           </div>
           <div class="dm" id="dm">
             <div class="dm-top"><span class="av">MAG</span><span><b>magpecaseservicos</b><small>online</small></span></div>
@@ -106,13 +106,13 @@ const HTML = String.raw`
           </div>
         </div>
         <div class="tile span-5 rv" style="align-self:start">
-          <h5>O que mudou na segunda versão</h5>
+          <h5>O que mudou</h5>
           <ol class="changes">
-            <li><span><b>Topo escuro com o motor em destaque,</b> para o catálogo chamar atenção no balcão e no WhatsApp.</span></li>
-            <li><span><b>Quatro ícones de confiança:</b> linha completa, qualidade, +5.000 itens e atendimento especializado.</span></li>
-            <li><span><b>Frase de segmentos</b> (energia, marítimo, mineração, construção, indústria) para quem lê saber na hora se é para ele.</span></li>
-            <li><span><b>Marcas distribuídas em grade:</b> de 4 para 9 logos, incluindo Delphi, Mahle e S&amp;S.</span></li>
-            <li><span><b>Rodapé de contatos</b> com endereço, telefones e e-mails separados, fácil de achar.</span></li>
+            <li><span><b>Topo escuro</b> com o motor em destaque</span></li>
+            <li><span><b>Ícones de confiança</b> logo abaixo do título</span></li>
+            <li><span><b>Segmentos atendidos</b> em uma frase</span></li>
+            <li><span><b>De 4 para 9 marcas</b>, em grade</span></li>
+            <li><span><b>Rodapé</b> com todos os contatos</span></li>
           </ol>
           <a class="site-card" href="https://www.magpecaseservicos.com.br" target="_blank" rel="noopener noreferrer" data-cursor="Abrir" style="margin-top:8px">
             <div class="bar"><i></i><i></i><i></i><span>magpecaseservicos.com.br</span></div>

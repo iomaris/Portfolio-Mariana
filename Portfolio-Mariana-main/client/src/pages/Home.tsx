@@ -170,7 +170,7 @@ function SectionHead({ n, title, children }: { n: string; title: string; childre
   return (
     <div className="reveal lg:sticky lg:top-28 lg:self-start">
       <p className="eyebrow">{n}</p>
-      <h2 className="mt-4 text-[clamp(40px,5.5vw,64px)] font-black leading-[1.02] tracking-[-0.03em]">{title}</h2>
+      <h2 className="mt-4 text-[clamp(36px,4vw,56px)] font-black leading-[1.02] tracking-[-0.03em]">{title}</h2>
       {children && <p className="mt-4 max-w-xs text-[15px] leading-relaxed text-muted-foreground">{children}</p>}
     </div>
   );
@@ -259,7 +259,7 @@ function TiltCard({ children, href, label }: { children: React.ReactNode; href: 
       data-cursor="Abrir"
       onMouseMove={onMove}
       onMouseLeave={onLeave}
-      className="group relative block overflow-hidden rounded-[18px] border border-border bg-background shadow-[0_30px_60px_-20px_rgba(23,23,25,0.25)] transition-[transform,box-shadow] duration-500 ease-out will-change-transform hover:shadow-[0_45px_80px_-25px_rgba(23,23,25,0.35)]"
+      className="group relative block overflow-hidden rounded-[18px] bg-background shadow-[0_30px_60px_-20px_rgba(23,23,25,0.25)] transition-[transform,box-shadow] duration-500 ease-out will-change-transform hover:shadow-[0_45px_80px_-25px_rgba(23,23,25,0.35)]"
     >
       {children}
       <span className="pointer-events-none absolute inset-0 opacity-0 transition-opacity duration-500 group-hover:opacity-100 bg-[radial-gradient(600px_circle_at_var(--gx,50%)_var(--gy,50%),rgba(255,255,255,0.35),transparent_40%)]" />
@@ -301,8 +301,8 @@ function CursorRing() {
     <div ref={ring} aria-hidden className="pointer-events-none fixed left-0 top-0 z-[100] mix-blend-difference">
       <div
         className={`flex items-center justify-center rounded-full border border-white font-mono text-[10px] uppercase tracking-[0.14em] text-black transition-all duration-300 ease-out ${
-          big ? "h-20 w-20 bg-white" : label ? "h-12 w-12 bg-white/0" : "h-7 w-7"
-        }`}
+ big ? "h-20 w-20 bg-white" : label ? "h-12 w-12 bg-white/0" : "h-7 w-7"
+ }`}
       >
         {big && label}
       </div>
@@ -512,7 +512,7 @@ export default function Home() {
       <header className="fixed inset-x-0 top-4 z-50 flex justify-center px-4 anim-fade-up" style={delay(500)}>
         <nav
           ref={navRef}
-          className="relative flex items-center gap-1 rounded-full border border-border bg-white/80 p-1.5 shadow-[0_12px_40px_-12px_rgba(23,23,25,0.25)] backdrop-blur-xl"
+          className="relative flex items-center gap-1 rounded-full bg-white/80 p-1.5 shadow-[0_12px_40px_-12px_rgba(23,23,25,0.25)] backdrop-blur-xl"
         >
           <span
             aria-hidden
@@ -525,8 +525,8 @@ export default function Home() {
               href={`#${id}`}
               aria-current={active === id ? "true" : undefined}
               className={`relative z-10 rounded-full px-3 py-2 text-[12px] font-semibold transition-colors duration-300 sm:px-4 sm:text-[13px] ${
-                active === id ? "text-background" : "text-foreground/60 hover:text-foreground"
-              } ${id === "experiencia" ? "hidden sm:block" : ""}`}
+ active === id ? "text-background" : "text-foreground/60 hover:text-foreground"
+ } ${id === "experiencia" ? "hidden sm:block" : ""}`}
             >
               {label}
             </a>
@@ -607,8 +607,8 @@ export default function Home() {
         <div className="pointer-events-none relative z-10 mx-auto mt-4 h-[62vh] w-max max-w-full lg:absolute lg:bottom-0 lg:left-1/2 lg:mt-0 lg:h-[88vh] lg:-translate-x-1/2">
           {/* anéis girando atrás da personagem */}
           <div className="absolute left-1/2 top-[30%] -z-10 aspect-square w-[115%] -translate-x-1/2 -translate-y-1/2" aria-hidden>
-            <div className="spin-slow absolute inset-0 rounded-full border border-dashed border-foreground/10" />
-            <div className="spin-slower absolute inset-[12%] rounded-full border border-foreground/[0.07]" />
+            <div className="spin-slow absolute inset-0 rounded-full border-dashed" />
+            <div className="spin-slower absolute inset-[12%] rounded-full" />
             <div className="absolute inset-[26%] rounded-full bg-[radial-gradient(circle,#f3f3f4,transparent_70%)]" />
           </div>
           <div className="anim-rise-in h-full">
@@ -629,7 +629,7 @@ export default function Home() {
       </section>
 
       {/* FAIXA */}
-      <section className="border-y border-border py-6" aria-label="Áreas de atuação">
+      <section className="py-6" aria-label="Áreas de atuação">
         <Marquee items={["Gestão de perfis", "Carrosséis", "Sites empresariais", "Atendimento no direct", "Stories"]} />
         <Marquee items={["Canva", "Figma", "Copy", "Anúncios", "HTML", "CSS", "JavaScript"]} reverse outline />
       </section>
@@ -638,14 +638,14 @@ export default function Home() {
       <SocialSections />
 
       {/* PROJETOS */}
-      <section id="projetos" className="border-t border-border bg-card py-24 md:py-32">
-        <div className="container grid gap-12 lg:grid-cols-[300px_1fr] lg:gap-16">
+      <section id="projetos" className="bg-card py-24 md:py-32">
+        <div className="container grid gap-12 lg:grid-cols-[320px_1fr] lg:gap-16">
           <SectionHead n="04 / Sites" title="Sites">
             Além do perfil, eu construo o site. Cada prévia é o site de verdade, carregando ao vivo.
           </SectionHead>
           <ol>
             {projects.map((p, i) => (
-              <li key={p.title} className="reveal-row grid gap-8 border-b border-border py-12 first:pt-0 md:grid-cols-[0.9fr_1.3fr] md:items-center md:gap-12">
+              <li key={p.title} className="reveal-row grid gap-8 py-12 first:pt-0 md:grid-cols-[0.9fr_1.3fr] md:items-center md:gap-12">
                 <div className="reveal">
                   <p className="font-mono text-[11px] uppercase tracking-[0.16em] text-muted-foreground">{String(i + 1).padStart(2, "0")} / Projeto</p>
                   <h3 className="mt-3 text-[28px] font-extrabold leading-tight tracking-[-0.03em]">{p.title}</h3>
@@ -666,7 +666,7 @@ export default function Home() {
                 </div>
                 <div className="reveal-wipe">
                   <TiltCard href={p.url} label={`Abrir o site ${p.title}`}>
-                    <div className="flex items-center gap-1.5 border-b border-border bg-background px-4 py-2.5">
+                    <div className="flex items-center gap-1.5 bg-background px-4 py-2.5">
                       <span className="h-2.5 w-2.5 rounded-full bg-[#d5d5d7]" />
                       <span className="h-2.5 w-2.5 rounded-full bg-[#d5d5d7]" />
                       <span className="h-2.5 w-2.5 rounded-full bg-[#d5d5d7]" />
@@ -682,14 +682,14 @@ export default function Home() {
       </section>
 
       {/* HABILIDADES */}
-      <section id="habilidades" className="border-t border-border py-24 md:py-32">
-        <div className="container grid gap-12 lg:grid-cols-[300px_1fr] lg:gap-16">
+      <section id="habilidades" className="py-24 md:py-32">
+        <div className="container grid gap-12 lg:grid-cols-[320px_1fr] lg:gap-16">
           <SectionHead n="05 / Habilidades" title="Habilidades" />
           <div className="grid gap-5 md:grid-cols-3">
             {skills.map((s, i) => (
               <div
                 key={s.group}
-                className="reveal spotlight group rounded-3xl border border-border bg-background p-7 transition-[transform,box-shadow,border-color] duration-500 hover:-translate-y-2 hover:border-foreground/30 hover:shadow-[0_30px_60px_-25px_rgba(23,23,25,0.3)]"
+                className="reveal spotlight group rounded-3xl bg-card p-7 transition-[transform,box-shadow,border-color] duration-500 hover:-translate-y-2 hover:shadow-[0_30px_60px_-25px_rgba(23,23,25,0.3)]"
                 style={vars({ "--d": `${i * 120}ms` })}
                 onMouseMove={(e) => {
                   const r = e.currentTarget.getBoundingClientRect();
@@ -704,7 +704,7 @@ export default function Home() {
                 <h3 className="mt-8 text-2xl font-extrabold leading-tight tracking-[-0.02em]">{s.group}</h3>
                 <ul className="mt-6 flex flex-wrap gap-2">
                   {s.items.map((it) => (
-                    <li key={it} className="rounded-full border border-border px-3 py-1.5 text-[13px] text-foreground/75 transition-colors duration-300 hover:border-foreground hover:bg-foreground hover:text-background">
+                    <li key={it} className="rounded-full bg-background px-3 py-1.5 text-[13px] text-foreground/75 transition-colors duration-300 hover:bg-foreground hover:text-background">
                       {it}
                     </li>
                   ))}
@@ -716,21 +716,21 @@ export default function Home() {
       </section>
 
       {/* EXPERIÊNCIA */}
-      <section id="experiencia" className="border-t border-border bg-card py-24 md:py-32">
-        <div className="container grid gap-12 lg:grid-cols-[300px_1fr] lg:gap-16">
+      <section id="experiencia" className="bg-card py-24 md:py-32">
+        <div className="container grid gap-12 lg:grid-cols-[320px_1fr] lg:gap-16">
           <SectionHead n="06 / Experiência" title="Onde eu já estive" />
           <div ref={expRef} className="relative pl-8">
             <div className="absolute left-0 top-2 bottom-2 w-px bg-border" />
             <div ref={expLineRef} className="absolute left-0 top-2 bottom-2 w-px origin-top scale-y-0 bg-foreground" />
             {experiences.map((e, i) => (
               <article key={e.company} className="reveal relative pb-14 last:pb-0" style={vars({ "--d": `${i * 80}ms` })}>
-                <span className="absolute -left-8 top-1.5 h-2.5 w-2.5 -translate-x-1/2 rounded-full border-2 border-background bg-foreground ring-1 ring-foreground" />
+                <span className="absolute -left-8 top-1.5 h-2.5 w-2.5 -translate-x-1/2 rounded-full bg-foreground ring-1 ring-foreground" />
                 <p className="font-mono text-[11px] uppercase tracking-[0.16em] text-muted-foreground">{e.period}</p>
                 <h3 className="mt-2 text-2xl font-extrabold tracking-[-0.02em] md:text-3xl">{e.role}</h3>
                 <p className="mt-1 flex flex-wrap items-center gap-3 text-[15px] text-foreground/70">
                   {e.company}
                   {e.note && (
-                    <span className="rounded-full border border-border px-3 py-0.5 font-mono text-[10px] uppercase tracking-[0.14em] text-muted-foreground">{e.note}</span>
+                    <span className="rounded-full bg-background px-3 py-0.5 font-mono text-[10px] uppercase tracking-[0.14em] text-muted-foreground">{e.note}</span>
                   )}
                 </p>
                 <ul className="mt-4 space-y-2 text-[15px] leading-relaxed text-muted-foreground">
@@ -748,14 +748,14 @@ export default function Home() {
       </section>
 
       {/* FORMAÇÃO */}
-      <section className="border-t border-border py-24 md:py-32">
-        <div className="container grid gap-12 lg:grid-cols-[300px_1fr] lg:gap-16">
+      <section className="py-24 md:py-32">
+        <div className="container grid gap-12 lg:grid-cols-[320px_1fr] lg:gap-16">
           <SectionHead n="07 / Formação" title="Formação" />
           <ul>
             {education.map((ed, i) => (
               <li
                 key={ed.title}
-                className="reveal group grid gap-2 border-b border-border py-7 first:pt-0 transition-[padding] duration-500 md:grid-cols-[1fr_auto] md:items-baseline md:hover:pl-4"
+                className="reveal group grid gap-2 py-7 first:pt-0 transition-[padding] duration-500 md:grid-cols-[1fr_auto] md:items-baseline md:hover:pl-4"
                 style={vars({ "--d": `${i * 80}ms` })}
               >
                 <div>
@@ -770,8 +770,8 @@ export default function Home() {
       </section>
 
       {/* SOBRE */}
-      <section id="sobre" className="border-t border-border bg-card py-24 md:py-32">
-        <div className="container grid gap-12 lg:grid-cols-[300px_1fr] lg:gap-16">
+      <section id="sobre" className="bg-card py-24 md:py-32">
+        <div className="container grid gap-12 lg:grid-cols-[320px_1fr] lg:gap-16">
           <SectionHead n="08 / Sobre" title="Sobre mim" />
           <div>
             <p className="reveal text-3xl font-light leading-[1.2] tracking-[-0.02em] md:text-5xl">
@@ -832,7 +832,7 @@ export default function Home() {
       </section>
 
       <footer className="bg-foreground pb-8 text-background/50">
-        <div className="container flex flex-col justify-between gap-3 border-t border-background/15 pt-6 font-mono text-[10px] uppercase tracking-[0.14em] sm:flex-row">
+        <div className="container flex flex-col justify-between gap-3 pt-6 font-mono text-[10px] uppercase tracking-[0.14em] sm:flex-row">
           <p>© 2026 Mariana Cardoso · Social media e sites em Manaus</p>
           <a href="#inicio" className="transition hover:text-background">
             Voltar ao topo ↑

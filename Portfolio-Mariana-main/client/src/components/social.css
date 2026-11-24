@@ -24,3 +24,19 @@
 .sm .chat-open .dm{background:transparent;border:0;padding:0;min-height:0;max-width:560px;width:100%;justify-self:center}
 .sm .chat-open .dm-top{border-bottom:0;padding-bottom:4px}
 .sm .chat-open .msg{font-size:15px}
+
+/* sem bordas: os blocos se separam por fundo e espaço */
+.sm .tile,.sm .site-card,.sm .strip button,.sm .ba,.sm .skill,.sm .chip,.sm .dm,.sm .open-one,.sm .hl .ring span,.sm .msg.in{border:0!important}
+.sm .tile{background:var(--card)}
+.sm .alt .tile{background:var(--bg)}
+.sm .site-card{background:var(--bg)}
+.sm .site-card .bar{border-bottom:0}
+.sm .msg.in{background:var(--card)}
+.sm .facts{border-top:0;gap:4px 0}
+.sm .facts div{border-bottom:0;padding:10px 16px 10px 0}
+.sm .changes li::before{border:0;background:var(--bg)}
+.sm .case+.case{border-top:0}
+.sm .steps{border-top:0}
+.sm .step{border-bottom:0}
+.sm .alt{border-block:0}
+.sm .dm-top{border-bottom:0}
