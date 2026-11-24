@@ -19,9 +19,6 @@ const HTML = String.raw`
 <!-- CASES -->
 <section class="sec" id="cases">
   <div class="wrap">
-    <div class="sec-head rv">
-      <div><h2>Um perfil, do zero ao no ar.</h2></div>
-    </div>
 
     <!-- CASE MAG -->
     <article class="case" id="case-mag">

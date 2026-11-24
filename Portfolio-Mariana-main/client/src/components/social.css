@@ -47,3 +47,7 @@
 .sm .site-card .body{background:none;padding:22px 0 0}
 .sm .site-card .bar{padding:10px 0}
 .sm .deliver{gap:56px 48px}
+
+/* sem corte na primeira letra dos títulos dos blocos */
+.sm .tile,.sm .site-card{overflow:visible}
+.sm #cases{padding-top:72px}
