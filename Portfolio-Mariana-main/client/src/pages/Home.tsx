@@ -129,6 +129,8 @@ const education = [
   { title: "Técnico em Cibersegurança", place: "Santander", period: "2026 – atual" },
   { title: "Desenvolvimento Web (Angular)", place: "Eldorado", period: "2026 – atual" },
   { title: "Técnico em Informática", place: "IFAM", period: "2023 – 2025" },
+  { title: "Pacote Office completo", place: "Fundação Bradesco", period: "Concluído" },
+  { title: "Atendimento ao público", place: "Fundação Bradesco", period: "Concluído" },
 ];
 
 // Ícones oficiais em uma cor só (simple-icons); VS Code e Canva não estão no pacote, então usam ícones de linha.

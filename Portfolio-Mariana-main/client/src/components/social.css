@@ -51,3 +51,14 @@
 /* sem corte na primeira letra dos títulos dos blocos */
 .sm .tile,.sm .site-card{overflow:visible}
 .sm #cases{padding-top:72px}
+
+/* catálogo: cartaz alinhado à esquerda e lista no mesmo topo */
+.sm .deliver .tile:has(.ba){align-self:start}
+.sm .deliver .ba{margin-inline:0;max-width:none}
+.sm .deliver .tile:has(.changes){align-self:start;padding-top:8px}
+.sm #case-mag .case-top{align-items:center}
+.sm #case-mag .sum{font-size:clamp(20px,1.9vw,26px);max-width:34ch}
+.sm .deliver .ba{width:auto;height:min(720px,82vh);aspect-ratio:910/1287;max-width:100%}
+.sm .deliver .tile:has(.changes){align-self:center}
+.sm .deliver .ba{height:auto;width:min(100%,calc(min(720px,82vh) * 910 / 1287))}
+.sm .deliver .tile:has(.ba){display:flex;justify-content:center}

@@ -26,38 +26,6 @@ const HTML = String.raw`
         <div class="rv">
           <h3>MAG Peças e Serviços</h3>
           <p class="sum">Loja de peças para motores Cummins. Assumi o Instagram inteiro: <strong>o que postar, como postar e quem responde.</strong></p>
-          <dl class="facts">
-            <div><dt>Segmento</dt><dd>Peças diesel · B2B</dd></div>
-            <div><dt>Meu papel</dt><dd>Social media</dd></div>
-            <div><dt>Canais</dt><dd>Instagram, WhatsApp, site</dd></div>
-            <div><dt>Perfil hoje</dt><dd>176 posts · 305 seguidores</dd></div>
-          </dl>
-          <div class="links">
-            <a class="link-line" href="https://www.instagram.com/magpecaseservicos/" target="_blank" rel="noopener noreferrer">@magpecaseservicos <span class="arrow">↗</span></a>
-            <a class="link-line" href="https://www.magpecaseservicos.com.br" target="_blank" rel="noopener noreferrer">magpecaseservicos.com.br <span class="arrow">↗</span></a>
-          </div>
-
-          <div class="story-block">
-            <div>
-              <h4>O desafio</h4>
-              <p>Mostrar o estoque com cara de marca séria e transformar post em conversa.</p>
-            </div>
-            <div>
-              <h4>O que eu fiz</h4>
-              <ul>
-                <li><span><b>Linha visual</b> no azul da marca</span></li>
-                <li><span><b>Um post por peça,</b> contato sempre no mesmo lugar</span></li>
-                <li><span><b>Avisos</b> de feriado e horário</span></li>
-                <li><span><b>Atendimento</b> no direct e WhatsApp</span></li>
-                <li><span><b>Catálogo</b> Cummins redesenhado</span></li>
-                <li><span><b>Site</b> atualizado</span></li>
-              </ul>
-            </div>
-            <div>
-              <h4>O resultado</h4>
-              <p>Feed com identidade própria e clientes pedindo orçamento pelo direct citando o post da peça.</p>
-            </div>
-          </div>
         </div>
 
         <div class="phone-col rv" style="--d:120ms">
@@ -91,7 +59,6 @@ const HTML = String.raw`
           </div>
         </div>
         <div class="tile span-7 rv">
-          <h5>Peças para motores Cummins: antes e depois.</h5>
           <div class="ba" id="ba" style="--p:50%">
             <img class="after" src="img/mag/catalogo-v2.webp" alt="Catálogo novo da MAG, com motor em vermelho, ícones, mais marcas distribuídas e rodapé de contatos" loading="lazy">
             <img class="before" src="img/mag/catalogo-v1.webp" alt="Primeira versão do catálogo da MAG, com fundo branco e motor cinza" loading="lazy">
