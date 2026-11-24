@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import { ArrowRight, ArrowUpRight, Download, MousePointer2 } from "lucide-react";
+import SocialSections from "@/components/SocialSections";
 
 const EMAIL = "maryazevedo2036@gmail.com";
 const CV = "curriculo-mariana-cardoso.pdf";
@@ -14,11 +15,17 @@ const MAX_X = 12; // quanto a íris anda, em px da imagem original
 const MAX_Y = 3;
 
 const nav = [
-  ["projetos", "Projetos"],
-  ["sobre", "Sobre"],
+  ["cases", "Social"],
+  ["criacoes", "Criações"],
+  ["projetos", "Sites"],
   ["experiencia", "Experiência"],
-  ["habilidades", "Habilidades"],
   ["contato", "Contato"],
+];
+
+const notifs = [
+  { icon: "♥", heart: true, title: "magpecaseservicos", text: "curtiu sua arte", meta: "agora", pos: "left-[6%] top-[70%]" },
+  { icon: "✉", title: "Nova mensagem", text: "“Vocês têm bico injetor K38?”", meta: "direct · 2 min", pos: "-right-[10%] top-[16%]" },
+  { icon: "✓", title: "Carrossel publicado", text: "7 slides, agendado 18h", meta: "Meta Business Suite", pos: "-right-[16%] top-[56%]" },
 ];
 
 const nowBuilding = [
@@ -75,22 +82,45 @@ const projects = [
 const experiences = [
   {
     period: "abr. – out. 2026",
-    role: "Assistente Fiscal",
+    role: "Social media e assistente fiscal",
     company: "MAG Peças e Serviços",
-    points: ["Emissão e conferência de notas fiscais de entrada e saída", "Controle de contas a pagar e a receber", "Atualização do site da empresa"],
+    points: [
+      "Gestão do Instagram: pauta, artes, legendas e publicação",
+      "Atendimento a clientes no direct e no WhatsApp",
+      "Redesign do catálogo de peças Cummins e atualização do site",
+      "Emissão e conferência de notas fiscais, contas a pagar e a receber",
+    ],
   },
   {
     period: "fev. – abr. 2026",
-    role: "Assistente Administrativa",
+    role: "Anúncios, site e atendimento",
     company: "Pioneira Andaimes & Equipamentos",
     note: "Contrato temporário",
-    points: ["Atendimento ao cliente e controle de locação de equipamentos", "Contratos e acompanhamento de licitações", "Desenvolvimento do site com HTML, CSS e JavaScript"],
+    points: [
+      "Posts de anúncio para locação de equipamentos",
+      "Site da empresa em HTML, CSS e JavaScript",
+      "Atendimento ao cliente, contratos e controle de locações",
+    ],
   },
   {
     period: "jul. 2025 – fev. 2026",
-    role: "Auxiliar de Escritório",
+    role: "Auxiliar de escritório",
     company: "Live Academia",
-    points: ["Padronização do arquivamento: buscas ~30 min mais rápidas por dia", "Organização de informações em sistemas internos", "Suporte interno sobre uso de sistemas"],
+    points: [
+      "Padronização do arquivamento: buscas ~30 min mais rápidas por dia",
+      "Organização de informações em sistemas internos",
+      "Suporte interno sobre uso de sistemas",
+    ],
+  },
+  {
+    period: "2023 – 2025",
+    role: "Design para projetos escolares e acadêmicos",
+    company: "Jornal CMC · PPGCASA · Intergreve · turma de Informática",
+    points: [
+      "Carrosséis de notícia para o jornal da escola",
+      "Série de divulgação das disciplinas do PPGCASA",
+      "Identidade, adesivo e crachá do Intergreve 2024",
+    ],
   },
 ];
 
@@ -101,9 +131,11 @@ const education = [
 ];
 
 const skills = [
-  { group: "Administrativo e fiscal", items: ["Notas fiscais", "Contas a pagar e receber", "Excel e Word avançados", "RM Totvs / CRM", "Gestão documental"] },
-  { group: "Tecnologia", items: ["HTML, CSS e JavaScript", "Angular", "Banco de dados SQL", "Windows e Linux", "Figma e Canva"] },
-  { group: "Jeito de trabalhar", items: ["Organização", "Proatividade", "Aprendizado rápido", "Trabalho em equipe", "Visão de negócio"] },
+  { group: "Social media", items: ["Planejamento de pauta", "Calendário editorial", "Copy e legendas", "Carrosséis", "Stories", "Posts de anúncio", "Meta Business Suite"] },
+  { group: "Design", items: ["Canva", "Figma", "Identidade visual", "Logo", "Catálogo e flyer", "Etiquetas e crachás", "CapCut"] },
+  { group: "Atendimento", items: ["Direct e WhatsApp Business", "Orçamentos", "Respostas padrão", "Pós-venda", "CRM"] },
+  { group: "Sites", items: ["HTML, CSS e JavaScript", "Angular (em formação)", "Banco de dados SQL", "Sites empresariais", "Publicação na Vercel"] },
+  { group: "Administrativo e fiscal", items: ["Notas fiscais", "Contas a pagar e receber", "Excel e Word avançados", "RM Totvs", "Gestão documental"] },
 ];
 
 const socials = [
@@ -143,7 +175,7 @@ function SectionHead({ n, title, children }: { n: string; title: string; childre
   return (
     <div className="reveal lg:sticky lg:top-28 lg:self-start">
       <p className="eyebrow">{n}</p>
-      <h2 className="mt-4 text-4xl font-extrabold tracking-[-0.03em] md:text-5xl">{title}</h2>
+      <h2 className="mt-4 text-[clamp(40px,5.5vw,64px)] font-black leading-[1.02] tracking-[-0.03em]">{title}</h2>
       {children && <p className="mt-4 max-w-xs text-[15px] leading-relaxed text-muted-foreground">{children}</p>}
     </div>
   );
@@ -499,7 +531,7 @@ export default function Home() {
               aria-current={active === id ? "true" : undefined}
               className={`relative z-10 rounded-full px-3 py-2 text-[12px] font-semibold transition-colors duration-300 sm:px-4 sm:text-[13px] ${
                 active === id ? "text-background" : "text-foreground/60 hover:text-foreground"
-              } ${id === "habilidades" ? "hidden sm:block" : ""}`}
+              } ${id === "experiencia" ? "hidden sm:block" : ""}`}
             >
               {label}
             </a>
@@ -521,7 +553,7 @@ export default function Home() {
         <div className="container relative z-20 pt-28 lg:grid lg:min-h-[100dvh] lg:grid-cols-[1fr_auto] lg:items-center lg:pt-0">
           <div className="max-w-md">
             <p className="eyebrow anim-fade-up" style={delay(700)}>
-              Administração e Tecnologia
+              Social media · Sites · Atendimento
             </p>
             <h1 className="mt-5 text-[52px] font-extrabold leading-[0.95] tracking-[-0.045em] md:text-[84px]">
               <span className="line-mask">
@@ -532,10 +564,13 @@ export default function Home() {
               <span className="line-mask">
                 <span style={delay(920)}>Mariana.</span>
               </span>
+              <span className="mt-3 ml-1 block w-max -rotate-3 font-['Caveat',cursive] text-[0.42em] font-bold tracking-normal text-[#ff3355] anim-fade-up" style={delay(1050)}>
+                @ioomaris
+              </span>
             </h1>
             <p className="mt-6 text-xl leading-snug text-muted-foreground anim-fade-up md:text-2xl" style={delay(1100)}>
-              Eu organizo processos
-              <br />e <strong className="font-extrabold text-foreground">construo sites</strong> que funcionam.
+              Eu cuido do perfil da sua marca{" "}
+              <strong className="font-extrabold text-foreground">do primeiro post até a resposta no direct</strong>, e construo o site dela.
             </p>
             <div className="mt-9 flex flex-wrap items-center gap-6 anim-fade-up" style={delay(1250)}>
               <Magnetic>
@@ -546,8 +581,8 @@ export default function Home() {
                   </span>
                 </a>
               </Magnetic>
-              <a href="#projetos" className="link-line pb-1 text-sm font-semibold">
-                Ver projetos
+              <a href="#cases" className="link-line pb-1 text-sm font-semibold">
+                Ver trabalhos
               </a>
             </div>
           </div>
@@ -584,10 +619,26 @@ export default function Home() {
           <div className="anim-rise-in h-full">
             <Character />
           </div>
+          {/* notificações em volta da personagem */}
+          <div className="absolute inset-0 hidden md:block" aria-hidden>
+            {notifs.map((n, i) => (
+              <div
+                key={n.title}
+                className={`absolute flex max-w-[230px] items-center gap-2.5 rounded-2xl border border-border bg-white/85 py-2 pl-2 pr-3.5 text-[12.5px] leading-tight shadow-[0_18px_40px_-18px_rgba(23,23,25,0.3)] backdrop-blur-md anim-fade-up ${n.pos}`}
+                style={delay(1500 + i * 450)}
+              >
+                <span className={`grid h-[30px] w-[30px] flex-none place-items-center rounded-[10px] text-sm text-white ${n.heart ? "bg-[#ff3355]" : "bg-foreground"}`}>{n.icon}</span>
+                <span>
+                  <b className="font-extrabold">{n.title}</b> {n.text}
+                  <small className="block text-[11px] text-muted-foreground">{n.meta}</small>
+                </span>
+              </div>
+            ))}
+          </div>
         </div>
 
         <a
-          href="#projetos"
+          href="#cases"
           className="absolute bottom-8 left-5 z-20 hidden items-center gap-3 font-mono text-[10px] uppercase tracking-[0.18em] text-muted-foreground transition hover:text-foreground sm:left-10 lg:flex anim-fade-up"
           style={delay(1800)}
         >
@@ -600,15 +651,18 @@ export default function Home() {
 
       {/* FAIXA */}
       <section className="border-y border-border py-6" aria-label="Áreas de atuação">
-        <Marquee items={["Sites empresariais", "Sistemas web", "Administrativo", "Fiscal", "Front-end"]} />
-        <Marquee items={["HTML", "CSS", "JavaScript", "Angular", "SQL", "Organização"]} reverse outline />
+        <Marquee items={["Gestão de perfis", "Carrosséis", "Sites empresariais", "Atendimento no direct", "Stories"]} />
+        <Marquee items={["Canva", "Figma", "Copy", "Anúncios", "HTML", "CSS", "JavaScript"]} reverse outline />
       </section>
 
+      {/* SOCIAL MEDIA: destaques, cases, criações e processo */}
+      <SocialSections />
+
       {/* PROJETOS */}
-      <section id="projetos" className="py-24 md:py-32">
+      <section id="projetos" className="border-t border-border bg-card py-24 md:py-32">
         <div className="container grid gap-12 lg:grid-cols-[300px_1fr] lg:gap-16">
-          <SectionHead n="01 / Projetos" title="Projetos">
-            Sites e sistemas que já estão no ar. Cada prévia é o site de verdade, carregando ao vivo.
+          <SectionHead n="04 / Sites" title="Sites">
+            Além do perfil, eu construo o site. Cada prévia é o site de verdade, carregando ao vivo.
           </SectionHead>
           <ol>
             {projects.map((p, i) => (
@@ -648,65 +702,10 @@ export default function Home() {
         </div>
       </section>
 
-      {/* SOBRE */}
-      <section id="sobre" className="border-t border-border bg-card py-24 md:py-32">
-        <div className="container grid gap-12 lg:grid-cols-[300px_1fr] lg:gap-16">
-          <SectionHead n="02 / Sobre" title="Sobre mim" />
-          <div>
-            <p className="reveal text-3xl font-light leading-[1.2] tracking-[-0.02em] md:text-5xl">
-              Coloco ordem no que é complexo e <strong className="font-extrabold">construo o que ainda não existe.</strong>
-            </p>
-            <div className="mt-10 grid gap-6 text-[15px] leading-relaxed text-muted-foreground md:grid-cols-2">
-              <p className="reveal" style={vars({ "--d": "100ms" })}>
-                Cresci vendo minha família empreender, e isso me ensinou cedo a entender como um negócio funciona por dentro: atendimento, papelada, caixa e cliente.
-              </p>
-              <p className="reveal" style={vars({ "--d": "200ms" })}>
-                Hoje junto a rotina administrativa e fiscal, onde sou organizada e cuidadosa com detalhes, com a tecnologia, onde construo sites e sigo estudando desenvolvimento web e cibersegurança.
-              </p>
-            </div>
-            <p className="reveal mt-8 font-mono text-[11px] uppercase tracking-[0.16em] text-muted-foreground" style={vars({ "--d": "300ms" })}>
-              Fora do trabalho: livros · xadrez · corrida · meta de 10 km
-            </p>
-          </div>
-        </div>
-      </section>
-
-      {/* EXPERIÊNCIA */}
-      <section id="experiencia" className="border-t border-border py-24 md:py-32">
-        <div className="container grid gap-12 lg:grid-cols-[300px_1fr] lg:gap-16">
-          <SectionHead n="03 / Experiência" title="Experiência" />
-          <div ref={expRef} className="relative pl-8">
-            <div className="absolute left-0 top-2 bottom-2 w-px bg-border" />
-            <div ref={expLineRef} className="absolute left-0 top-2 bottom-2 w-px origin-top scale-y-0 bg-foreground" />
-            {experiences.map((e, i) => (
-              <article key={e.company} className="reveal relative pb-14 last:pb-0" style={vars({ "--d": `${i * 80}ms` })}>
-                <span className="absolute -left-8 top-1.5 h-2.5 w-2.5 -translate-x-1/2 rounded-full border-2 border-background bg-foreground ring-1 ring-foreground" />
-                <p className="font-mono text-[11px] uppercase tracking-[0.16em] text-muted-foreground">{e.period}</p>
-                <h3 className="mt-2 text-2xl font-extrabold tracking-[-0.02em] md:text-3xl">{e.role}</h3>
-                <p className="mt-1 flex flex-wrap items-center gap-3 text-[15px] text-foreground/70">
-                  {e.company}
-                  {e.note && (
-                    <span className="rounded-full border border-border px-3 py-0.5 font-mono text-[10px] uppercase tracking-[0.14em] text-muted-foreground">{e.note}</span>
-                  )}
-                </p>
-                <ul className="mt-4 space-y-2 text-[15px] leading-relaxed text-muted-foreground">
-                  {e.points.map((pt) => (
-                    <li key={pt} className="flex gap-3">
-                      <span className="mt-[0.6em] h-px w-3 shrink-0 bg-foreground/40" />
-                      {pt}
-                    </li>
-                  ))}
-                </ul>
-              </article>
-            ))}
-          </div>
-        </div>
-      </section>
-
       {/* HABILIDADES */}
-      <section id="habilidades" className="border-t border-border bg-card py-24 md:py-32">
+      <section id="habilidades" className="border-t border-border py-24 md:py-32">
         <div className="container grid gap-12 lg:grid-cols-[300px_1fr] lg:gap-16">
-          <SectionHead n="04 / Habilidades" title="Habilidades" />
+          <SectionHead n="05 / Habilidades" title="Habilidades" />
           <div className="grid gap-5 md:grid-cols-3">
             {skills.map((s, i) => (
               <div
@@ -737,10 +736,42 @@ export default function Home() {
         </div>
       </section>
 
+      {/* EXPERIÊNCIA */}
+      <section id="experiencia" className="border-t border-border bg-card py-24 md:py-32">
+        <div className="container grid gap-12 lg:grid-cols-[300px_1fr] lg:gap-16">
+          <SectionHead n="06 / Experiência" title="Onde eu já estive" />
+          <div ref={expRef} className="relative pl-8">
+            <div className="absolute left-0 top-2 bottom-2 w-px bg-border" />
+            <div ref={expLineRef} className="absolute left-0 top-2 bottom-2 w-px origin-top scale-y-0 bg-foreground" />
+            {experiences.map((e, i) => (
+              <article key={e.company} className="reveal relative pb-14 last:pb-0" style={vars({ "--d": `${i * 80}ms` })}>
+                <span className="absolute -left-8 top-1.5 h-2.5 w-2.5 -translate-x-1/2 rounded-full border-2 border-background bg-foreground ring-1 ring-foreground" />
+                <p className="font-mono text-[11px] uppercase tracking-[0.16em] text-muted-foreground">{e.period}</p>
+                <h3 className="mt-2 text-2xl font-extrabold tracking-[-0.02em] md:text-3xl">{e.role}</h3>
+                <p className="mt-1 flex flex-wrap items-center gap-3 text-[15px] text-foreground/70">
+                  {e.company}
+                  {e.note && (
+                    <span className="rounded-full border border-border px-3 py-0.5 font-mono text-[10px] uppercase tracking-[0.14em] text-muted-foreground">{e.note}</span>
+                  )}
+                </p>
+                <ul className="mt-4 space-y-2 text-[15px] leading-relaxed text-muted-foreground">
+                  {e.points.map((pt) => (
+                    <li key={pt} className="flex gap-3">
+                      <span className="mt-[0.6em] h-px w-3 shrink-0 bg-foreground/40" />
+                      {pt}
+                    </li>
+                  ))}
+                </ul>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* FORMAÇÃO */}
       <section className="border-t border-border py-24 md:py-32">
         <div className="container grid gap-12 lg:grid-cols-[300px_1fr] lg:gap-16">
-          <SectionHead n="05 / Formação" title="Formação" />
+          <SectionHead n="07 / Formação" title="Formação" />
           <ul>
             {education.map((ed, i) => (
               <li
@@ -759,11 +790,34 @@ export default function Home() {
         </div>
       </section>
 
+      {/* SOBRE */}
+      <section id="sobre" className="border-t border-border bg-card py-24 md:py-32">
+        <div className="container grid gap-12 lg:grid-cols-[300px_1fr] lg:gap-16">
+          <SectionHead n="08 / Sobre" title="Sobre mim" />
+          <div>
+            <p className="reveal text-3xl font-light leading-[1.2] tracking-[-0.02em] md:text-5xl">
+              Cresci vendo minha família empreender. Por isso <strong className="font-extrabold">eu escrevo para quem compra, não para quem curte.</strong>
+            </p>
+            <div className="mt-10 grid gap-6 text-[15px] leading-relaxed text-muted-foreground md:grid-cols-2">
+              <p className="reveal" style={vars({ "--d": "100ms" })}>
+                Aprendi cedo como um negócio funciona por dentro: o cliente que liga, a papelada, o caixa. Hoje uso isso no Instagram das empresas. Antes de criar, eu entendo o que a loja vende e o que o cliente pergunta.
+              </p>
+              <p className="reveal" style={vars({ "--d": "200ms" })}>
+                Sou técnica em Informática pelo IFAM e sigo estudando desenvolvimento web e cibersegurança. Essa mistura me deixa cuidar do perfil, do site e do atendimento sem que nada fique desencontrado.
+              </p>
+            </div>
+            <p className="reveal mt-8 font-mono text-[11px] uppercase tracking-[0.16em] text-muted-foreground" style={vars({ "--d": "300ms" })}>
+              Fora do trabalho: livros · xadrez · corrida · meta de 10 km
+            </p>
+          </div>
+        </div>
+      </section>
+
       {/* CONTATO */}
       <section id="contato" className="relative overflow-hidden bg-foreground py-28 text-background md:py-40">
         <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(to_right,rgba(255,255,255,0.05)_1px,transparent_1px),linear-gradient(to_bottom,rgba(255,255,255,0.05)_1px,transparent_1px)] bg-[size:72px_72px] [mask-image:radial-gradient(ellipse_at_70%_30%,black,transparent_70%)]" />
         <div className="container relative">
-          <p className="reveal font-mono text-[11px] uppercase tracking-[0.18em] text-background/60">06 / Contato</p>
+          <p className="reveal font-mono text-[11px] uppercase tracking-[0.18em] text-background/60">Contato</p>
           <h2 className="reveal wave mt-6 text-[15vw] font-extrabold leading-[0.9] tracking-[-0.05em] md:text-[9rem]">
             {"Vamos conversar?".split("").map((c, i) => (
               <span key={i} className="wave-letter" style={{ transitionDelay: `${i * 25}ms` }}>
@@ -800,7 +854,7 @@ export default function Home() {
 
       <footer className="bg-foreground pb-8 text-background/50">
         <div className="container flex flex-col justify-between gap-3 border-t border-background/15 pt-6 font-mono text-[10px] uppercase tracking-[0.14em] sm:flex-row">
-          <p>© 2026 Mariana Cardoso</p>
+          <p>© 2026 Mariana Cardoso · Social media e sites em Manaus</p>
           <a href="#inicio" className="transition hover:text-background">
             Voltar ao topo ↑
           </a>
