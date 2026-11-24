@@ -15,6 +15,7 @@ const MAX_X = 12; // quanto a íris anda, em px da imagem original
 const MAX_Y = 3;
 
 const nav = [
+  ["sobre", "Sobre"],
   ["cases", "Social"],
   ["criacoes", "Criações"],
   ["projetos", "Sites"],
@@ -634,13 +635,36 @@ export default function Home() {
         <Marquee items={["Canva", "Figma", "Copy", "Anúncios", "HTML", "CSS", "JavaScript"]} reverse outline />
       </section>
 
+      {/* SOBRE */}
+      <section id="sobre" className="bg-card py-24 md:py-32">
+        <div className="container grid gap-12 lg:grid-cols-[300px_1fr] lg:gap-24">
+          <SectionHead n="01 / Sobre" title="Sobre mim" />
+          <div>
+            <p className="reveal text-3xl font-light leading-[1.2] tracking-[-0.02em] md:text-5xl">
+              Cresci vendo minha família empreender. Por isso <strong className="font-extrabold">eu escrevo para quem compra, não para quem curte.</strong>
+            </p>
+            <div className="mt-10 grid gap-6 text-[15px] leading-relaxed text-muted-foreground md:grid-cols-2">
+              <p className="reveal" style={vars({ "--d": "100ms" })}>
+                Aprendi cedo como um negócio funciona por dentro: o cliente que liga, a papelada, o caixa. Hoje uso isso no Instagram das empresas. Antes de criar, eu entendo o que a loja vende e o que o cliente pergunta.
+              </p>
+              <p className="reveal" style={vars({ "--d": "200ms" })}>
+                Sou técnica em Informática pelo IFAM e sigo estudando desenvolvimento web e cibersegurança. Essa mistura me deixa cuidar do perfil, do site e do atendimento sem que nada fique desencontrado.
+              </p>
+            </div>
+            <p className="reveal mt-8 font-mono text-[11px] uppercase tracking-[0.16em] text-muted-foreground" style={vars({ "--d": "300ms" })}>
+              Fora do trabalho: livros · xadrez · corrida · meta de 10 km
+            </p>
+          </div>
+        </div>
+      </section>
+
       {/* SOCIAL MEDIA: destaques, cases, criações e processo */}
       <SocialSections />
 
       {/* PROJETOS */}
       <section id="projetos" className="bg-card py-24 md:py-32">
-        <div className="container grid gap-12 lg:grid-cols-[320px_1fr] lg:gap-16">
-          <SectionHead n="04 / Sites" title="Sites">
+        <div className="container grid gap-12 lg:grid-cols-[300px_1fr] lg:gap-24">
+          <SectionHead n="05 / Sites" title="Sites">
             Além do perfil, eu construo o site. Cada prévia é o site de verdade, carregando ao vivo.
           </SectionHead>
           <ol>
@@ -683,9 +707,9 @@ export default function Home() {
 
       {/* HABILIDADES */}
       <section id="habilidades" className="py-24 md:py-32">
-        <div className="container grid gap-12 lg:grid-cols-[320px_1fr] lg:gap-16">
-          <SectionHead n="05 / Habilidades" title="Habilidades" />
-          <div className="grid gap-5 md:grid-cols-3">
+        <div className="container grid gap-12 lg:grid-cols-[300px_1fr] lg:gap-24">
+          <SectionHead n="06 / Habilidades" title="Habilidades" />
+          <div className="grid gap-5 md:grid-cols-2 xl:grid-cols-3">
             {skills.map((s, i) => (
               <div
                 key={s.group}
@@ -717,8 +741,8 @@ export default function Home() {
 
       {/* EXPERIÊNCIA */}
       <section id="experiencia" className="bg-card py-24 md:py-32">
-        <div className="container grid gap-12 lg:grid-cols-[320px_1fr] lg:gap-16">
-          <SectionHead n="06 / Experiência" title="Onde eu já estive" />
+        <div className="container grid gap-12 lg:grid-cols-[300px_1fr] lg:gap-24">
+          <SectionHead n="07 / Experiência" title="Onde eu já estive" />
           <div ref={expRef} className="relative pl-8">
             <div className="absolute left-0 top-2 bottom-2 w-px bg-border" />
             <div ref={expLineRef} className="absolute left-0 top-2 bottom-2 w-px origin-top scale-y-0 bg-foreground" />
@@ -749,8 +773,8 @@ export default function Home() {
 
       {/* FORMAÇÃO */}
       <section className="py-24 md:py-32">
-        <div className="container grid gap-12 lg:grid-cols-[320px_1fr] lg:gap-16">
-          <SectionHead n="07 / Formação" title="Formação" />
+        <div className="container grid gap-12 lg:grid-cols-[300px_1fr] lg:gap-24">
+          <SectionHead n="08 / Formação" title="Formação" />
           <ul>
             {education.map((ed, i) => (
               <li
@@ -766,29 +790,6 @@ export default function Home() {
               </li>
             ))}
           </ul>
-        </div>
-      </section>
-
-      {/* SOBRE */}
-      <section id="sobre" className="bg-card py-24 md:py-32">
-        <div className="container grid gap-12 lg:grid-cols-[320px_1fr] lg:gap-16">
-          <SectionHead n="08 / Sobre" title="Sobre mim" />
-          <div>
-            <p className="reveal text-3xl font-light leading-[1.2] tracking-[-0.02em] md:text-5xl">
-              Cresci vendo minha família empreender. Por isso <strong className="font-extrabold">eu escrevo para quem compra, não para quem curte.</strong>
-            </p>
-            <div className="mt-10 grid gap-6 text-[15px] leading-relaxed text-muted-foreground md:grid-cols-2">
-              <p className="reveal" style={vars({ "--d": "100ms" })}>
-                Aprendi cedo como um negócio funciona por dentro: o cliente que liga, a papelada, o caixa. Hoje uso isso no Instagram das empresas. Antes de criar, eu entendo o que a loja vende e o que o cliente pergunta.
-              </p>
-              <p className="reveal" style={vars({ "--d": "200ms" })}>
-                Sou técnica em Informática pelo IFAM e sigo estudando desenvolvimento web e cibersegurança. Essa mistura me deixa cuidar do perfil, do site e do atendimento sem que nada fique desencontrado.
-              </p>
-            </div>
-            <p className="reveal mt-8 font-mono text-[11px] uppercase tracking-[0.16em] text-muted-foreground" style={vars({ "--d": "300ms" })}>
-              Fora do trabalho: livros · xadrez · corrida · meta de 10 km
-            </p>
-          </div>
         </div>
       </section>
 
