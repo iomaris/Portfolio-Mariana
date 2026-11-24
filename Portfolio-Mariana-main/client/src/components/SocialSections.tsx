@@ -20,7 +20,7 @@ const HTML = String.raw`
 <section class="sec" id="cases">
   <div class="wrap">
     <div class="sec-head rv">
-      <div><p class="eyebrow" style="margin-bottom:16px;font:500 11px/1.4 'IBM Plex Mono',ui-monospace,monospace;letter-spacing:.18em">01 / Social media</p><h2>Um perfil, do zero ao no ar.</h2></div>
+      <div><p class="eyebrow" style="margin-bottom:16px;font:500 11px/1.4 'IBM Plex Mono',ui-monospace,monospace;letter-spacing:.18em">02 / Social media</p><h2>Um perfil, do zero ao no ar.</h2></div>
       <p>Cuidei da comunicação de uma empresa de Manaus que vende peças para motor a outras empresas. Público técnico, que quer resposta rápida e informação certa. Fiz o perfil, o atendimento e o site falarem a mesma língua.</p>
     </div>
 
@@ -129,7 +129,7 @@ const HTML = String.raw`
 <section class="sec alt" id="criacoes">
   <div class="wrap">
     <div class="sec-head rv">
-      <div><p class="eyebrow" style="margin-bottom:16px;font:500 11px/1.4 'IBM Plex Mono',ui-monospace,monospace;letter-spacing:.18em">02 / Criações</p><h2>Mais coisas que eu desenhei.</h2></div>
+      <div><p class="eyebrow" style="margin-bottom:16px;font:500 11px/1.4 'IBM Plex Mono',ui-monospace,monospace;letter-spacing:.18em">03 / Criações</p><h2>Mais coisas que eu desenhei.</h2></div>
       <p>Carrosséis de notícia, séries para um programa de pós-graduação, material de evento, impressos e marca. Cada capa abre como story: toque nas laterais para passar.</p>
     </div>
   </div>
@@ -140,7 +140,7 @@ const HTML = String.raw`
 <section class="sec" id="processo">
   <div class="wrap">
     <div class="sec-head rv">
-      <div><p class="eyebrow" style="margin-bottom:16px;font:500 11px/1.4 'IBM Plex Mono',ui-monospace,monospace;letter-spacing:.18em">03 / Processo</p><h2>Como eu cuido de um perfil.</h2></div>
+      <div><p class="eyebrow" style="margin-bottom:16px;font:500 11px/1.4 'IBM Plex Mono',ui-monospace,monospace;letter-spacing:.18em">04 / Processo</p><h2>Como eu cuido de um perfil.</h2></div>
       <p>O mesmo caminho em todo cliente. A ordem importa: não dá para criar bem sem saber o que a empresa vende e quem pergunta o quê.</p>
     </div>
     <div class="steps">
