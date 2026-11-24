@@ -40,3 +40,10 @@
 .sm .step{border-bottom:0}
 .sm .alt{border-block:0}
 .sm .dm-top{border-bottom:0}
+
+/* blocos no mesmo fundo da página */
+.sm .tile,.sm .alt .tile{background:transparent;padding:0}
+.sm .site-card{background:transparent}
+.sm .site-card .body{background:none;padding:22px 0 0}
+.sm .site-card .bar{padding:10px 0}
+.sm .deliver{gap:56px 48px}

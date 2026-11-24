@@ -170,9 +170,7 @@ const finePointer = () => window.matchMedia("(pointer: fine)").matches && !windo
 function SectionHead({ n, title, children }: { n: string; title: string; children?: React.ReactNode }) {
   return (
     <div className="reveal lg:sticky lg:top-28 lg:self-start">
-      <p className="eyebrow">{n}</p>
-      <h2 className="mt-4 text-[clamp(36px,4vw,56px)] font-black leading-[1.02] tracking-[-0.03em]">{title}</h2>
-      {children && <p className="mt-4 max-w-xs text-[15px] leading-relaxed text-muted-foreground">{children}</p>}
+      <h2 className="text-[clamp(36px,4vw,56px)] font-black leading-[1.02] tracking-[-0.03em]">{title}</h2>
     </div>
   );
 }
@@ -664,15 +662,13 @@ export default function Home() {
       {/* PROJETOS */}
       <section id="projetos" className="bg-card py-24 md:py-32">
         <div className="container grid gap-12 lg:grid-cols-[300px_1fr] lg:gap-24">
-          <SectionHead n="05 / Sites" title="Sites">
-            Além do perfil, eu construo o site. Cada prévia é o site de verdade, carregando ao vivo.
-          </SectionHead>
+          <SectionHead n="05 / Sites" title="Sites" />
           <ol>
             {projects.map((p, i) => (
               <li key={p.title} className="reveal-row grid gap-8 py-12 first:pt-0 md:grid-cols-[0.9fr_1.3fr] md:items-center md:gap-12">
                 <div className="reveal">
-                  <p className="font-mono text-[11px] uppercase tracking-[0.16em] text-muted-foreground">{String(i + 1).padStart(2, "0")} / Projeto</p>
-                  <h3 className="mt-3 text-[28px] font-extrabold leading-tight tracking-[-0.03em]">{p.title}</h3>
+                  
+                  <h3 className="text-[28px] font-extrabold leading-tight tracking-[-0.03em]">{p.title}</h3>
                   <p className="mt-3 text-[15px] leading-relaxed text-muted-foreground">{p.description}</p>
                   <p className="mt-4 flex flex-wrap gap-x-4 gap-y-1 text-sm text-foreground/70">
                     {p.tags.map((t) => (
@@ -797,7 +793,7 @@ export default function Home() {
       <section id="contato" className="relative overflow-hidden bg-foreground py-28 text-background md:py-40">
         <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(to_right,rgba(255,255,255,0.05)_1px,transparent_1px),linear-gradient(to_bottom,rgba(255,255,255,0.05)_1px,transparent_1px)] bg-[size:72px_72px] [mask-image:radial-gradient(ellipse_at_70%_30%,black,transparent_70%)]" />
         <div className="container relative">
-          <p className="reveal font-mono text-[11px] uppercase tracking-[0.18em] text-background/60">Contato</p>
+          
           <h2 className="reveal wave mt-6 text-[15vw] font-extrabold leading-[0.9] tracking-[-0.05em] md:text-[9rem]">
             {"Vamos conversar?".split("").map((c, i) => (
               <span key={i} className="wave-letter" style={{ transitionDelay: `${i * 25}ms` }}>

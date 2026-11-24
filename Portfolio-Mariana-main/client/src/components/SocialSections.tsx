@@ -20,8 +20,7 @@ const HTML = String.raw`
 <section class="sec" id="cases">
   <div class="wrap">
     <div class="sec-head rv">
-      <div><p class="eyebrow" style="margin-bottom:16px;font:500 11px/1.4 'IBM Plex Mono',ui-monospace,monospace;letter-spacing:.18em">02 / Social media</p><h2>Um perfil, do zero ao no ar.</h2></div>
-      <p>Cuidei da comunicação de uma empresa de Manaus que vende peças para motor a outras empresas. Público técnico, que quer resposta rápida e informação certa. Fiz o perfil, o atendimento e o site falarem a mesma língua.</p>
+      <div><h2>Um perfil, do zero ao no ar.</h2></div>
     </div>
 
     <!-- CASE MAG -->
@@ -83,7 +82,6 @@ const HTML = String.raw`
         <div class="chat-open span-12 rv">
           <div class="chat-text">
             <h5>Quem chama, recebe resposta.</h5>
-            <p>Responder rápido, confirmar a peça com o balcão e fechar o orçamento no WhatsApp.</p>
           </div>
           <div class="dm" id="dm">
             <div class="dm-top"><span class="av">MAG</span><span><b>magpecaseservicos</b><small>online</small></span></div>
@@ -129,8 +127,7 @@ const HTML = String.raw`
 <section class="sec alt" id="criacoes">
   <div class="wrap">
     <div class="sec-head rv">
-      <div><p class="eyebrow" style="margin-bottom:16px;font:500 11px/1.4 'IBM Plex Mono',ui-monospace,monospace;letter-spacing:.18em">03 / Criações</p><h2>Mais coisas que eu desenhei.</h2></div>
-      <p>Carrosséis de notícia, séries para um programa de pós-graduação, material de evento, impressos e marca. Cada capa abre como story: toque nas laterais para passar.</p>
+      <div><h2>Mais coisas que eu desenhei.</h2></div>
     </div>
   </div>
   <div class="rail" aria-label="Criações"><div class="rail-track" id="works"></div></div>
@@ -140,8 +137,7 @@ const HTML = String.raw`
 <section class="sec" id="processo">
   <div class="wrap">
     <div class="sec-head rv">
-      <div><p class="eyebrow" style="margin-bottom:16px;font:500 11px/1.4 'IBM Plex Mono',ui-monospace,monospace;letter-spacing:.18em">04 / Processo</p><h2>Como eu cuido de um perfil.</h2></div>
-      <p>O mesmo caminho em todo cliente. A ordem importa: não dá para criar bem sem saber o que a empresa vende e quem pergunta o quê.</p>
+      <div><h2>Como eu cuido de um perfil.</h2></div>
     </div>
     <div class="steps">
       <div class="step rv"><span class="n">01</span><h4>Escuta</h4><p>Converso com quem atende o balcão. As perguntas que mais chegam viram a primeira pauta.</p><span class="hand">"qual a peça mais pedida?"</span></div>
@@ -240,7 +236,7 @@ const card = (k, dup) => { const s = SETS[k], c = s.cover, n = s.items.length;
   const imgs = s.items.slice(0,3).reverse().map(it => `<img src="${it.src}" alt="" loading="lazy">`).join('');
   return `<button class="work" type="button" data-set="${k}" data-cursor="Ver" ${dup?'aria-hidden="true" tabindex="-1"':''} style="--cbg:${c.bg};--cfg:${c.fg};--cac:${c.ac}">
     <span class="cover"><span class="c-name">${c.name}</span><span class="c-stack">${imgs}</span><span class="c-n">${n>1?`${n} ${s.tag==='serie'?'posts':'slides'}`:'1 arte'}</span></span>
-    <h4>${s.title}</h4><p>${s.desc}</p></button>`; };
+    <h4>${s.title}</h4></button>`; };
 // a fila vai duas vezes para o carrossel girar sem emenda
 works.innerHTML = ORDER_WORKS.map(k => card(k)).join('') + ORDER_WORKS.map(k => card(k, true)).join('');
 
