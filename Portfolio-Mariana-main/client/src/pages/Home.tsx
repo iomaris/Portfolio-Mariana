@@ -1,6 +1,11 @@
 import { useEffect, useRef, useState } from "react";
 import { ArrowRight, ArrowUpRight, Download, MousePointer2 } from "lucide-react";
 import SocialSections from "@/components/SocialSections";
+import { Palette, SquareCode } from "lucide-react";
+import {
+  siDocker, siFigma, siFirebase, siGit, siGithub, siHtml5, siCss, siJavascript, siLinux, siMysql,
+  siNotion, siOpenjdk, siPostgresql, siPython, siTrello, siTypescript,
+} from "simple-icons";
 
 const EMAIL = "maryazevedo2036@gmail.com";
 const CV = "curriculo-mariana-cardoso.pdf";
@@ -126,13 +131,26 @@ const education = [
   { title: "Técnico em Informática", place: "IFAM", period: "2023 – 2025" },
 ];
 
-const skills = [
-  { group: "Social media", items: ["Planejamento de pauta", "Calendário editorial", "Copy e legendas", "Carrosséis", "Stories", "Posts de anúncio", "Meta Business Suite"] },
-  { group: "Design", items: ["Canva", "Figma", "Identidade visual", "Logo", "Catálogo e flyer", "Etiquetas e crachás", "CapCut"] },
-  { group: "Atendimento", items: ["Direct e WhatsApp Business", "Orçamentos", "Respostas padrão", "Pós-venda", "CRM"] },
-  { group: "Sites", items: ["HTML, CSS e JavaScript", "Angular (em formação)", "Banco de dados SQL", "Sites empresariais", "Publicação na Vercel"] },
-  { group: "Administrativo e fiscal", items: ["Notas fiscais", "Contas a pagar e receber", "Excel e Word avançados", "RM Totvs", "Gestão documental"] },
-  { group: "Outras ferramentas e linguagens", items: ["Python", "TypeScript", "Node.js", "Git e GitHub", "VS Code", "Cursor", "Trello", "Pacote Office", "Claude e outras IAs"] },
+// Ícones oficiais em uma cor só (simple-icons); VS Code e Canva não estão no pacote, então usam ícones de linha.
+const tools: { name: string; path?: string; Icon?: typeof Palette }[] = [
+  { name: "VS Code", Icon: SquareCode },
+  { name: "Git", path: siGit.path },
+  { name: "GitHub", path: siGithub.path },
+  { name: "HTML", path: siHtml5.path },
+  { name: "CSS", path: siCss.path },
+  { name: "JavaScript", path: siJavascript.path },
+  { name: "TypeScript", path: siTypescript.path },
+  { name: "Python", path: siPython.path },
+  { name: "Java", path: siOpenjdk.path },
+  { name: "Canva", Icon: Palette },
+  { name: "Figma", path: siFigma.path },
+  { name: "Trello", path: siTrello.path },
+  { name: "Notion", path: siNotion.path },
+  { name: "Firebase", path: siFirebase.path },
+  { name: "PostgreSQL", path: siPostgresql.path },
+  { name: "MySQL", path: siMysql.path },
+  { name: "Linux", path: siLinux.path },
+  { name: "Docker", path: siDocker.path },
 ];
 
 const socials = [
@@ -702,37 +720,28 @@ export default function Home() {
         </div>
       </section>
 
-      {/* HABILIDADES */}
-      <section id="habilidades" className="py-24 md:py-32">
+      {/* FERRAMENTAS */}
+      <section id="ferramentas" className="py-24 md:py-32">
         <div className="container grid gap-12 lg:grid-cols-[300px_1fr] lg:gap-24">
-          <SectionHead n="06 / Habilidades" title="Habilidades" />
-          <div className="grid gap-5 md:grid-cols-2 xl:grid-cols-3">
-            {skills.map((s, i) => (
-              <div
-                key={s.group}
-                className="reveal spotlight group rounded-3xl bg-card p-7 transition-[transform,box-shadow,border-color] duration-500 hover:-translate-y-2 hover:shadow-[0_30px_60px_-25px_rgba(23,23,25,0.3)]"
-                style={vars({ "--d": `${i * 120}ms` })}
-                onMouseMove={(e) => {
-                  const r = e.currentTarget.getBoundingClientRect();
-                  e.currentTarget.style.setProperty("--mx", `${e.clientX - r.left}px`);
-                  e.currentTarget.style.setProperty("--my", `${e.clientY - r.top}px`);
-                }}
+          <SectionHead n="" title="Ferramentas" />
+          <ul className="grid grid-cols-3 gap-2.5 sm:gap-3 md:grid-cols-4 xl:grid-cols-6">
+            {tools.map((t, i) => (
+              <li
+                key={t.name}
+                className="reveal group flex aspect-square flex-col items-center justify-center gap-2.5 rounded-2xl sm:gap-4 sm:rounded-3xl bg-card text-foreground transition-[transform,background-color,color] duration-500 hover:-translate-y-1.5 hover:bg-foreground hover:text-background"
+                style={vars({ "--d": `${(i % 6) * 60}ms` })}
               >
-                <div className="flex items-center justify-between">
-                  <span className="font-mono text-xs text-muted-foreground">{String(i + 1).padStart(2, "0")}</span>
-                  <ArrowUpRight className="h-4 w-4 text-muted-foreground transition-transform duration-500 group-hover:rotate-45 group-hover:text-foreground" />
-                </div>
-                <h3 className="mt-8 text-2xl font-extrabold leading-tight tracking-[-0.02em]">{s.group}</h3>
-                <ul className="mt-6 flex flex-wrap gap-2">
-                  {s.items.map((it) => (
-                    <li key={it} className="rounded-full bg-background px-3 py-1.5 text-[13px] text-foreground/75 transition-colors duration-300 hover:bg-foreground hover:text-background">
-                      {it}
-                    </li>
-                  ))}
-                </ul>
-              </div>
+                {t.path ? (
+                  <svg viewBox="0 0 24 24" aria-hidden className="h-7 w-7 fill-current sm:h-9 sm:w-9 transition-transform duration-500 group-hover:scale-110 group-hover:-rotate-6">
+                    <path d={t.path} />
+                  </svg>
+                ) : (
+                  t.Icon && <t.Icon aria-hidden strokeWidth={1.6} className="h-7 w-7 transition-transform sm:h-9 sm:w-9 duration-500 group-hover:scale-110 group-hover:-rotate-6" />
+                )}
+                <span className="text-[11px] font-semibold sm:text-[13px]">{t.name}</span>
+              </li>
             ))}
-          </div>
+          </ul>
         </div>
       </section>
 
