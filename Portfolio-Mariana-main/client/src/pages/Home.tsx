@@ -78,7 +78,7 @@ const projects = [
 const experiences = [
   {
     period: "abr. – out. 2026",
-    role: "Social media e assistente fiscal",
+    role: "Assistente fiscal e social media",
     company: "MAG Peças e Serviços",
     points: [
       "Gestão do Instagram: pauta, artes, legendas e publicação",
@@ -89,7 +89,7 @@ const experiences = [
   },
   {
     period: "fev. – abr. 2026",
-    role: "Anúncios, site e atendimento",
+    role: "Assistente administrativa e social media",
     company: "Pioneira Andaimes & Equipamentos",
     note: "Contrato temporário",
     points: [
@@ -132,6 +132,7 @@ const skills = [
   { group: "Atendimento", items: ["Direct e WhatsApp Business", "Orçamentos", "Respostas padrão", "Pós-venda", "CRM"] },
   { group: "Sites", items: ["HTML, CSS e JavaScript", "Angular (em formação)", "Banco de dados SQL", "Sites empresariais", "Publicação na Vercel"] },
   { group: "Administrativo e fiscal", items: ["Notas fiscais", "Contas a pagar e receber", "Excel e Word avançados", "RM Totvs", "Gestão documental"] },
+  { group: "Outras ferramentas e linguagens", items: ["Python", "TypeScript", "Node.js", "Git e GitHub", "VS Code", "Cursor", "Trello", "Pacote Office", "Claude e outras IAs"] },
 ];
 
 const socials = [
@@ -547,7 +548,7 @@ export default function Home() {
         <div className="container relative z-20 pt-28 lg:grid lg:min-h-[100dvh] lg:grid-cols-[1fr_auto] lg:items-center lg:pt-0">
           <div className="max-w-md">
             <p className="eyebrow anim-fade-up" style={delay(700)}>
-              Social media · Desenvolvedora full stack
+              Social media · Desenvolvedora full stack · Administração
             </p>
             <h1 className="mt-5 text-[52px] font-extrabold leading-[0.95] tracking-[-0.045em] md:text-[84px]">
               <span className="line-mask">
@@ -650,7 +651,7 @@ export default function Home() {
               </p>
             </div>
             <p className="reveal mt-8 font-mono text-[11px] uppercase tracking-[0.16em] text-muted-foreground" style={vars({ "--d": "300ms" })}>
-              Fora do trabalho: livros · xadrez · corrida · meta de 10 km
+              Fora do trabalho: livros · xadrez · corrida
             </p>
           </div>
         </div>
