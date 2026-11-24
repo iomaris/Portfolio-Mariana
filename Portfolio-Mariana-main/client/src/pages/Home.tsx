@@ -22,11 +22,6 @@ const nav = [
   ["contato", "Contato"],
 ];
 
-const notifs = [
-  { icon: "♥", heart: true, title: "magpecaseservicos", text: "curtiu sua arte", meta: "agora", pos: "left-[6%] top-[70%]" },
-  { icon: "✉", title: "Nova mensagem", text: "“Vocês têm bico injetor K38?”", meta: "direct · 2 min", pos: "-right-[10%] top-[16%]" },
-  { icon: "✓", title: "Carrossel publicado", text: "7 slides, agendado 18h", meta: "Meta Business Suite", pos: "-right-[16%] top-[56%]" },
-];
 
 const nowBuilding = [
   { title: "Desenvolvimento Web", detail: "Eldorado · Angular" },
@@ -553,7 +548,7 @@ export default function Home() {
         <div className="container relative z-20 pt-28 lg:grid lg:min-h-[100dvh] lg:grid-cols-[1fr_auto] lg:items-center lg:pt-0">
           <div className="max-w-md">
             <p className="eyebrow anim-fade-up" style={delay(700)}>
-              Social media · Sites · Atendimento
+              Social media · Desenvolvedora full stack
             </p>
             <h1 className="mt-5 text-[52px] font-extrabold leading-[0.95] tracking-[-0.045em] md:text-[84px]">
               <span className="line-mask">
@@ -618,22 +613,6 @@ export default function Home() {
           </div>
           <div className="anim-rise-in h-full">
             <Character />
-          </div>
-          {/* notificações em volta da personagem */}
-          <div className="absolute inset-0 hidden md:block" aria-hidden>
-            {notifs.map((n, i) => (
-              <div
-                key={n.title}
-                className={`absolute flex max-w-[230px] items-center gap-2.5 rounded-2xl border border-border bg-white/85 py-2 pl-2 pr-3.5 text-[12.5px] leading-tight shadow-[0_18px_40px_-18px_rgba(23,23,25,0.3)] backdrop-blur-md anim-fade-up ${n.pos}`}
-                style={delay(1500 + i * 450)}
-              >
-                <span className={`grid h-[30px] w-[30px] flex-none place-items-center rounded-[10px] text-sm text-white ${n.heart ? "bg-[#ff3355]" : "bg-foreground"}`}>{n.icon}</span>
-                <span>
-                  <b className="font-extrabold">{n.title}</b> {n.text}
-                  <small className="block text-[11px] text-muted-foreground">{n.meta}</small>
-                </span>
-              </div>
-            ))}
           </div>
         </div>
 

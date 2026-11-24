@@ -20,8 +20,8 @@ const HTML = String.raw`
 <section class="sec" id="cases">
   <div class="wrap">
     <div class="sec-head rv">
-      <div><p class="eyebrow" style="margin-bottom:16px;font:500 11px/1.4 'IBM Plex Mono',ui-monospace,monospace;letter-spacing:.18em">01 / Social media</p><h2>Dois perfis, do zero ao no ar.</h2></div>
-      <p>Cuidei da comunicação de duas empresas de Manaus que vendem para outras empresas: peças para motor e andaimes. Público técnico, que quer resposta rápida e informação certa. Em cada uma fiz o perfil e o site falarem a mesma língua.</p>
+      <div><p class="eyebrow" style="margin-bottom:16px;font:500 11px/1.4 'IBM Plex Mono',ui-monospace,monospace;letter-spacing:.18em">01 / Social media</p><h2>Um perfil, do zero ao no ar.</h2></div>
+      <p>Cuidei da comunicação de uma empresa de Manaus que vende peças para motor a outras empresas. Público técnico, que quer resposta rápida e informação certa. Fiz o perfil, o atendimento e o site falarem a mesma língua.</p>
     </div>
 
     <!-- CASE MAG -->
@@ -80,8 +80,11 @@ const HTML = String.raw`
           <div class="strip" id="magStrip"></div>
         </div>
 
-        <div class="tile span-5 rv">
-          <h5>Quem chama, recebe resposta.</h5>
+        <div class="chat-open span-12 rv">
+          <div class="chat-text">
+            <h5>Quem chama, recebe resposta.</h5>
+            <p>Meu fluxo: responder rápido, confirmar a referência da peça com o balcão antes de prometer, e levar a negociação para o WhatsApp da loja com tudo anotado.</p>
+          </div>
           <div class="dm" id="dm">
             <div class="dm-top"><span class="av">MAG</span><span><b>magpecaseservicos</b><small>online</small></span></div>
             <p class="msg in">Boa tarde! Vi o post do bico injetor K38. Tem pra pronta entrega?</p>
@@ -91,21 +94,7 @@ const HTML = String.raw`
             <div class="typing" aria-hidden="true"><i></i><i></i><i></i></div>
             <button class="replay link-line" type="button" hidden>Ver de novo ↺</button>
           </div>
-          <p>Meu fluxo: responder rápido, confirmar a referência da peça com o balcão antes de prometer, e levar a negociação para o WhatsApp da loja com tudo anotado.</p>
         </div>
-
-        <div class="tile span-7 rv">
-          <h5>Feriado avisado com cuidado de marca.</h5>
-          <div style="display:grid;gap:18px;grid-template-columns:repeat(auto-fit,minmax(min(100%,200px),1fr));align-items:start">
-            <button class="open-one" data-set="aparecida" style="border-radius:16px;overflow:hidden;border:1px solid var(--line)" data-cursor="Abrir"><img src="img/mag/aparecida.webp" alt="Post de 12 de outubro, Dia de Nossa Senhora Aparecida, avisando que a MAG não abre no feriado" loading="lazy"></button>
-            <div style="display:grid;gap:12px">
-              <p>O post de 12 de outubro faz duas coisas: homenageia uma data importante para o público e responde a dúvida prática antes dela chegar. Quando fecha, quando volta e a que horas.</p>
-              <p>Tipografia em azul da marca, a imagem recortada sobre um arco e as informações-chave em negrito: <b>12 de outubro</b>, <b>13 de outubro</b>, <b>7h50</b>.</p>
-              <p class="hand" style="font-size:22px;color:var(--fg)">menos ligação de "abre amanhã?"</p>
-            </div>
-          </div>
-        </div>
-
         <div class="tile span-7 rv">
           <h5>Peças para motores Cummins: antes e depois.</h5>
           <div class="ba" id="ba" style="--p:50%">
@@ -133,62 +122,6 @@ const HTML = String.raw`
       </div>
     </article>
 
-    <!-- CASE PIONEIRA -->
-    <article class="case" id="case-pioneira">
-      <div class="case-top">
-        <div class="rv">
-          <h3>Pioneira Andaimes &amp; Equipamentos</h3>
-          <p class="sum">Locação de andaimes e equipamentos para obra. Num contrato curto, a missão foi <strong>colocar anúncios no ar e dar à empresa um site que passasse confiança.</strong></p>
-          <dl class="facts">
-            <div><dt>Segmento</dt><dd>Locação · construção</dd></div>
-            <div><dt>Meu papel</dt><dd>Anúncios + site</dd></div>
-            <div><dt>Duração</dt><dd>3 meses</dd></div>
-          </dl>
-          <div class="links">
-            <a class="link-line" href="https://www.instagram.com/pioneiraae/" target="_blank" rel="noopener noreferrer">@pioneiraae <span class="arrow">↗</span></a>
-            <a class="link-line" href="https://mdvdearaujo.com.br/" target="_blank" rel="noopener noreferrer">Site da Pioneira <span class="arrow">↗</span></a>
-          </div>
-          <div class="story-block">
-            <div>
-              <h4>O desafio</h4>
-              <p>Quem aluga andaime está com a obra esperando e decide rápido. O anúncio precisava responder em segundos: o que tem, por quanto tempo e como pedir.</p>
-            </div>
-            <div>
-              <h4>O que eu fiz</h4>
-              <ul>
-                <li><span><b>Posts de anúncio</b> para os equipamentos, com gancho direto para o problema da obra.</span></li>
-                <li><span><b>Estrutura fixa</b> de gancho, oferta, prova e chamada em todos os anúncios.</span></li>
-                <li><span><b>Site da empresa</b> com os equipamentos e o contato a um toque.</span></li>
-                <li><span><b>Atendimento</b> e controle das locações, que deram o vocabulário certo aos anúncios.</span></li>
-              </ul>
-            </div>
-            <div>
-              <h4>O que eu levei daqui</h4>
-              <p>Em contrato curto, vale deixar algo que continue funcionando. A estrutura dos anúncios e o site ficaram com a empresa, prontos para reaproveitar.</p>
-            </div>
-          </div>
-        </div>
-        <div class="ad-wrap rv" style="--d:120ms">
-          <div class="ad" aria-label="Estrutura dos anúncios da Pioneira">
-            <div class="slot"><small>1 · Gancho</small><b>A obra não pode parar.</b></div>
-            <div class="big slot"><small>2 · Oferta</small><b>Andaimes e equipamentos para locação</b></div>
-            <div class="slot"><small>3 · Prova</small><b>Por dia, semana ou mês. Entrega combinada.</b></div>
-            <span class="cta">4 · Peça seu orçamento →</span>
-          </div>
-          <p class="hand muted" style="font-size:21px;text-align:center">o esqueleto que eu usava em todo anúncio</p>
-        </div>
-      </div>
-      <div class="deliver">
-        <a class="site-card span-6 rv" href="https://mdvdearaujo.com.br/" target="_blank" rel="noopener noreferrer" data-cursor="Abrir">
-          <div class="bar"><i></i><i></i><i></i><span>mdvdearaujo.com.br</span></div>
-          <div class="body"><b>Pioneira Andaimes &amp; Equipamentos</b><span class="muted" style="font-size:15px">Apresenta a empresa, os equipamentos e leva direto ao contato.</span><span class="go">Abrir site <span class="arrow">↗</span></span></div>
-        </a>
-        <a class="site-card span-6 rv" style="--d:100ms" href="https://www.instagram.com/pioneiraae/" target="_blank" rel="noopener noreferrer" data-cursor="Abrir">
-          <div class="bar"><i></i><i></i><i></i><span>instagram.com/pioneiraae</span></div>
-          <div class="body"><b>Os posts de anúncio no perfil</b><span class="muted" style="font-size:15px">Veja os anúncios publicados direto no Instagram da Pioneira.</span><span class="go">Abrir perfil <span class="arrow">↗</span></span></div>
-        </a>
-      </div>
-    </article>
   </div>
 </section>
 
@@ -255,7 +188,8 @@ const fine = matchMedia('(pointer: fine)').matches && !reduce;
 const SETS = {
   magProdutos: { title:'MAG · Série de produtos', sub:'7 posts · Instagram', av:'img/mag/story-logo.webp',
     items: [['Alternador Cummins'],['Alternador ZM'],['Bico injetor Cummins'],['Bico injetor K38'],['Bico injetor NTA855'],['Bico injetor QSK60'],['Turbina KTA']].map(([c],i)=>({src:`img/mag/produto-${i+1}.webp`, cap:c, alt:`Post da MAG: ${c}`})) },
-  aparecida: { title:'MAG · Aviso de feriado', sub:'12 de outubro', av:'img/mag/story-logo.webp',
+  aparecida: { title:'MAG · Aviso de feriado', sub:'12 de outubro', av:'img/mag/story-logo.webp', cover:{bg:'#0f2f6b',fg:'#ffffff',ac:'#f2c14e',name:'Nossa Senhora Aparecida'}, tag:'post',
+    desc:'Post de 12 de outubro: homenageia a data e já responde quando a loja fecha e volta, com as datas e o horário em destaque.',
     items:[{src:'img/mag/aparecida.webp', cap:'Dia de Nossa Senhora Aparecida: aviso de fechamento e retorno às 7h50.', alt:'Post do Dia de Nossa Senhora Aparecida da MAG'}] },
   catalogo: { title:'MAG · Catálogo Cummins', sub:'Primeira versão e redesign', av:'img/mag/story-logo.webp',
     items:[{src:'img/mag/catalogo-v1.webp', cap:'Versão 1: base clara, informações essenciais.', alt:'Catálogo MAG versão 1'},{src:'img/mag/catalogo-v2.webp', cap:'Versão 2: topo escuro, ícones de confiança, 9 marcas e rodapé de contatos.', alt:'Catálogo MAG versão 2'}] },
@@ -281,7 +215,7 @@ const SETS = {
     desc:'Logo para um software educacional: um livro aberto com a letra A e raios de ideia.',
     items:[{src:'img/outros/logo-alpha-1.webp', cap:'Livro aberto, a letra A e raios de ideia', alt:'Logo AlphaEdu'}] },
 };
-const ORDER_WORKS = ['ia','guerra','ppgcasa','intergreve','rifa','acessorios','alpha'];
+const ORDER_WORKS = ['ia','aparecida','guerra','ppgcasa','intergreve','rifa','acessorios','alpha'];
 const HIGHLIGHTS = [
   ['magProdutos','MAG','<circle cx="12" cy="12" r="3"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3M4.9 4.9 7 7M17 17l2.1 2.1M4.9 19.1 7 17M17 7l2.1-2.1"/>'],
   ['catalogo','Catálogo','<path d="M2 5c3-1 6-1 10 1 4-2 7-2 10-1v14c-3-1-6-1-10 1-4-2-7-2-10-1z"/><path d="M12 6v14"/>'],
